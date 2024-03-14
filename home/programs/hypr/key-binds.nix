@@ -9,8 +9,9 @@
       "$mainMod, V, togglefloating"
       "$mainMod, R, exec, rofiWindow"
 
-      ", Print, exec, grim -g '$(slurp)' - | wl-copy -t image/png"
-      "SHIFT, Print, exec, grim -g '$(slurp)' ~/grim/tmp.png && wl-copy -t image/png < ~/grim/tmp.png && mv ~/grim/tmp.png ~/grim/'$(date +'%Y-%m-%d-%H%M%S.png')'"
+      ", Print, exec, grimblast --notify copy area"
+      "$mainMod, Print, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""
+      "$mainMod SHIFT, s, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"

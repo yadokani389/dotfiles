@@ -11,10 +11,10 @@ shell zsh
 confirm_os_window_close 0
 
 # Font config
-font_family      jetbrains mono nerd font
-bold_font        jetbrains mono nerd font
-italic_font      jetbrains mono nerd font
-bold_italic_font jetbrains mono nerd font
+font_family      JetBrainsMono Nerd Font
+bold_font        JetBrainsMono Nerd Font
+italic_font      JetBrainsMono Nerd Font
+bold_italic_font JetBrainsMono Nerd Font
 
 font_size 14.0
 

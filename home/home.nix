@@ -1,4 +1,4 @@
-{ hyprland, nixvim, pkgs, ...}: {
+{ hyprland, nixvim, pkgs, ... }: {
 
   imports = [
     hyprland.homeManagerModules.default
@@ -15,7 +15,7 @@
   };
 
   home.packages = (with pkgs; [
-    
+
     #User Apps
     firefox
     kitty
@@ -24,7 +24,7 @@
     flameshot
     obs-studio
     vscode
-    
+
     #utils
     ranger
     wlr-randr
@@ -38,6 +38,9 @@
     wlogout
     xdg-utils
     gh
+    bat
+    lazydocker
+    appimage-run
 
     #misc 
     cava
@@ -45,7 +48,7 @@
     nitch
     wget
     grim
-    grim
+    grimblast
     slurp
     wl-clipboard
     mpc-cli
@@ -59,26 +62,28 @@
     pamixer
     sptlrx
     neofetch
+    ripgrep
 
     nixvim.packages."x86_64-linux".default
-  ]) ++ (with pkgs.gnome; [ 
-    nautilus
-    zenity
-    gnome-tweaks
-    eog
-  ]);
+
+    #development
+    cmake
+    ninja
+    pkgconf
+    go
+    gopls
+    gcc
+  ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
 
     "org/gnome/shell/extensions/user-theme" = {
       name = "Tokyonight-Dark-B-LB";
     };
   };
 
-  i18n.inputMethod= {
+  i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [ fcitx5-mozc ];
   };

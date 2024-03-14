@@ -5,11 +5,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../hosts/desktop
-    ];
+  imports = [ ./hardware-configuration.nix ../hosts/desktop ];
 
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -18,32 +14,35 @@
       device = "nodev";
       efiSupport = true;
       extraEntries = ''
-        menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-094E-3E9F' {
-	  insmod part_gpt
-	  insmod fat
-	  search --no-floppy --fs-uuid --set=root 094E-3E9F
-	  chainloader /efi/Microsoft/Boot/bootmgfw.efi
-        }
-        menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-	  insmod part_gpt
-	  insmod fat
-	  search --no-floppy --fs-uuid --set=root 094E-3E9F
-	  linux /vmlinuz-linux root=/dev/nvme0n1p2
-	  initrd /initramfs-linux.img
-        }
-        submenu 'Advanced options for Arch Linux (on /dev/nvme0n1p2)' $menuentry_id_option 'osprober-gnulinux-advanced-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-          menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-/vmlinuz-linux--6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-	    insmod part_gpt
-	    insmod fat
-	    search --no-floppy --fs-uuid --set=root 094E-3E9F
-            linux /vmlinuz-linux root=/dev/nvme0n1p2
-	    initrd /initramfs-linux.img
-	  }
-        }
+                menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-094E-3E9F' {
+        	  insmod part_gpt
+        	  insmod fat
+        	  search --no-floppy --fs-uuid --set=root 094E-3E9F
+        	  chainloader /efi/Microsoft/Boot/bootmgfw.efi
+                }
+                menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
+        	  insmod part_gpt
+        	  insmod fat
+        	  search --no-floppy --fs-uuid --set=root 094E-3E9F
+        	  linux /vmlinuz-linux root=/dev/nvme0n1p2
+        	  initrd /initramfs-linux.img
+                }
+                submenu 'Advanced options for Arch Linux (on /dev/nvme0n1p2)' $menuentry_id_option 'osprober-gnulinux-advanced-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
+                  menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-/vmlinuz-linux--6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
+        	    insmod part_gpt
+        	    insmod fat
+        	    search --no-floppy --fs-uuid --set=root 094E-3E9F
+                    linux /vmlinuz-linux root=/dev/nvme0n1p2
+        	    initrd /initramfs-linux.img
+        	  }
+                }
       '';
     };
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd.kernelModules = [ "joydev" ];
+  };
 
   networking = {
     hostName = "nixos-kani";
@@ -59,7 +58,6 @@
   console.keyMap = "jp106";
   time.hardwareClockInLocalTime = true;
 
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -71,28 +69,17 @@
       jack.enable = true;
       pulse.enable = true;
     };
-    xserver.videoDrivers = ["nvidia"];
+    xserver.videoDrivers = [ "nvidia" ];
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
   services.blueman.enable = true;
-
 
   users.users.kani = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      neovim
-      git
-      zsh
-    ];
-  };
+  environment = { systemPackages = with pkgs; [ neovim git zsh ]; };
   programs.zsh.enable = true;
 
   environment.sessionVariables = {
@@ -101,6 +88,10 @@
   };
 
   hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
     opengl = {
       enable = true;
       driSupport = true;
@@ -118,7 +109,7 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
     };
     gc = {
       automatic = true;
@@ -129,7 +120,15 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
 
   system.stateVersion = "24.05";
 }
-
