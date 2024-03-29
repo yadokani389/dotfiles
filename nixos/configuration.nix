@@ -14,30 +14,7 @@
       device = "nodev";
       efiSupport = true;
       default = "saved";
-      extraEntries = ''
-                menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-094E-3E9F' {
-        	  insmod part_gpt
-        	  insmod fat
-        	  search --no-floppy --fs-uuid --set=root 094E-3E9F
-        	  chainloader /efi/Microsoft/Boot/bootmgfw.efi
-                }
-                menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class arch --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-simple-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-        	  insmod part_gpt
-        	  insmod fat
-        	  search --no-floppy --fs-uuid --set=root 094E-3E9F
-        	  linux /vmlinuz-linux root=/dev/nvme0n1p2
-        	  initrd /initramfs-linux.img
-                }
-                submenu 'Advanced options for Arch Linux (on /dev/nvme0n1p2)' $menuentry_id_option 'osprober-gnulinux-advanced-6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-                  menuentry 'Arch Linux (on /dev/nvme0n1p2)' --class gnu-linux --class gnu --class os $menuentry_id_option 'osprober-gnulinux-/vmlinuz-linux--6a7a7f3f-cd9a-4090-91fd-f6e71b04b25f' {
-        	    insmod part_gpt
-        	    insmod fat
-        	    search --no-floppy --fs-uuid --set=root 094E-3E9F
-                    linux /vmlinuz-linux root=/dev/nvme0n1p2
-        	    initrd /initramfs-linux.img
-        	  }
-                }
-      '';
+      useOSProber = true;
     };
   };
   boot = {
