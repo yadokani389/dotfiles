@@ -41,6 +41,7 @@
     bat
     lazydocker
     appimage-run
+    unzip
 
     #misc 
     cava

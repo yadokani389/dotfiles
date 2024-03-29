@@ -13,6 +13,7 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      default = "saved";
       extraEntries = ''
                 menuentry 'Windows Boot Manager (on /dev/nvme0n1p1)' --class windows --class os $menuentry_id_option 'osprober-efi-094E-3E9F' {
         	  insmod part_gpt

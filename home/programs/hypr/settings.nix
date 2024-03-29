@@ -9,7 +9,7 @@
     source = [ "/home/kani/.config/hypr/colors" ];
     monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" "DP-1,1920x1080@75,1920x0,1" ];
     windowrule = [ "float,^(pavucontrol)$" ];
-    windowrulev2 = [ "opacity 0.8,class:^(kitty)$" ];
+    windowrulev2 = [ "opacity 0.8,class:^(kitty)$" "opacity 0.9,title:^(?=.*Firefox)(?!.*YouTube).*$" ];
     input = {
       kb_layout = "jp";
       follow_mouse = 1;

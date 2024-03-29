@@ -40,6 +40,4 @@ let
       echo "swww not found"
     fi
   '';
-in {
-  home.packages = with pkgs; [ cava-internal rofiWindow wallpaper_random ];
-}
+in { home.packages = with pkgs; [ cava-internal rofiWindow wallpaper_random ]; }
