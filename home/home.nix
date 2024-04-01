@@ -1,4 +1,4 @@
-{ hyprland, nixvim, pkgs, ... }: {
+{ hyprland, nixvim, OpenSiv3D, pkgs, ... }: {
 
   imports = [
     hyprland.homeManagerModules.default
@@ -74,6 +74,7 @@
     go
     gopls
     gcc
+    OpenSiv3D.packages."x86_64-linux".default
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

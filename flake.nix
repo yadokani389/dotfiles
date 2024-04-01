@@ -9,9 +9,10 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     nixvim.url = "github:yadokani389/nixvim-config";
+    OpenSiv3D.url = "github:yadokani389/OpenSiv3D/no_sse";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }:
+  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, OpenSiv3D, ... }:
 
     let
       system = "x86_64-linux";
@@ -27,6 +28,7 @@
           specialArgs = {
             inherit hyprland;
             inherit nixvim;
+            inherit OpenSiv3D;
           };
           modules = [
             ./nixos/configuration.nix
