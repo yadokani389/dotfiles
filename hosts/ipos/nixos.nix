@@ -10,4 +10,6 @@
        Hyprland
     fi
   '';
+
+  hardware.opengl.enable = true;
 }

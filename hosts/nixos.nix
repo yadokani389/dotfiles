@@ -41,9 +41,7 @@
   services.blueman.enable = true;
 
   programs = {
-    zsh = {
-      enable = true;
-    };
+    zsh.enable = true;
     git.enable = true;
     regreet.enable = true;
     dconf.enable = true;
@@ -53,6 +51,8 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+    hashedPassword =
+      "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
   };
 
   hardware = {
