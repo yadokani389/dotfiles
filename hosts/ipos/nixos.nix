@@ -5,11 +5,11 @@
 
   console.keyMap = "jp106";
 
+  hardware.opengl.enable = true;
+
   programs.zsh.interactiveShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
        Hyprland
     fi
   '';
-
-  hardware.opengl.enable = true;
 }
