@@ -15,6 +15,8 @@
         la = "eza -a";
         ll = "eza -l";
         lla = "eza -la";
+        rm = "rm -rf";
+        cp = "cp -r";
       };
 
       autosuggestion.enable = true;

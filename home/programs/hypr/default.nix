@@ -2,7 +2,6 @@
 
 {
   imports = [ 
-    ./hyprland-environment.nix
     ./settings.nix
     ./key-binds.nix
   ];

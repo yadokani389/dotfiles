@@ -1,18 +1,6 @@
-{ hyprland, nixvim, OpenSiv3D, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
 
-  imports = [
-    hyprland.homeManagerModules.default
-    #./environment
-    ./programs
-    ./scripts
-    ./themes
-  ];
-
-  home = rec {
-    username = "kani";
-    homeDirectory = "/home/kani";
-    stateVersion = "24.05";
-  };
+  imports = [ ./programs ./scripts ./themes ];
 
   home.packages = (with pkgs; [
 
@@ -28,7 +16,6 @@
     #utils
     ranger
     wlr-randr
-    git
     gnumake
     curl
     dunst
@@ -65,7 +52,7 @@
     neofetch
     ripgrep
 
-    nixvim.packages."x86_64-linux".default
+    inputs.nixvim.packages."x86_64-linux".default
 
     #development
     cmake
@@ -74,7 +61,7 @@
     go
     gopls
     gcc
-    OpenSiv3D.packages."x86_64-linux".default
+    inputs.OpenSiv3D.packages."x86_64-linux".default
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

@@ -3,15 +3,13 @@
     exec-once = [
       "hyprctl setcursor Bibata-Modern-Classic 24"
       "dunst"
-      "swww init & sleep 0.5 && wallpaper_random"
+      "swww-daemon & sleep 1 && wallpaper_random"
     ];
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];
-    monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" "DP-1,1920x1080@75,1920x0,1" ];
     windowrule = [ "float,^(pavucontrol)$" ];
-    windowrulev2 = [ "opacity 0.8,class:^(kitty)$" "opacity 0.9,title:^(?=.*Firefox)(?!.*YouTube).*$" ];
+    windowrulev2 = [ "opacity 0.8,class:^(kitty)$" "opacity 0.8,title:^(?=.*Firefox)(?!.*YouTube).*$" ];
     input = {
-      kb_layout = "jp";
       follow_mouse = 1;
       sensitivity = 0;
       touchpad = { natural_scroll = false; };
