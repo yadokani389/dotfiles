@@ -151,6 +151,7 @@
       modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
+        "battery"
         "backlight"
         "memory"
         "cpu"
@@ -174,6 +175,19 @@
         "format-icons" = { "default" = [ "" "" "" ]; };
         "on-click" = "pamixer -t";
         "tooltip" = false;
+      };
+      "battery" = {
+        "interval" = 1;
+        "states" = {
+          "warning" = 30;
+          "critical" = 15;
+        };
+        "format" = "{icon} {capacity}%";
+        "format-charging" = "󰂄 {capacity}%";
+        "format-plugged" = "󱟦 {capacity}%";
+        "format-alt" = "{time} {icon}";
+        "format-full" = "󰁹 {capacity}%";
+        "format-icons" = [ "󰁻" "󰁿" "󰂁" ];
       };
       "clock" = {
         "interval" = 1;

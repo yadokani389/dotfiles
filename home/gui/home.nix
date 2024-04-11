@@ -22,6 +22,7 @@
     tokyo-night-gtk
     playerctl
     pamixer
+    brightnessctl
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

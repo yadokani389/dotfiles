@@ -12,6 +12,11 @@
 
   hardware.opengl.enable = true;
 
+  services = {
+    thermald.enable = true;
+    tlp.enable = true;
+  };
+
   programs.zsh.interactiveShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
        Hyprland

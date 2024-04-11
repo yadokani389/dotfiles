@@ -66,6 +66,8 @@
       ",XF86AudioRaiseVolume,exec,pamixer -i 5"
       ",XF86AudioPlay,exec,playerctl play-pause"
       ",XF86AudioPause,exec,playerctl play-pause"
+      ",XF86MonBrightnessUp,exec,brightnessctl s +10%"
+      ",XF86MonBrightnessDown,exec,brightnessctl s 10%-"
 
       "SUPER,Tab,cyclenext"
       "SUPER,Tab,bringactivetotop"
