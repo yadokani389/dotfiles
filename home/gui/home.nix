@@ -1,10 +1,8 @@
 { inputs, pkgs, ... }: {
 
-  imports = [ ./programs ./scripts ./themes ];
+  imports = [ ./programs ./themes ];
 
   home.packages = (with pkgs; [
-
-    #User Apps
     firefox
     kitty
     spotify
@@ -12,56 +10,18 @@
     flameshot
     obs-studio
     vscode
-
-    #utils
-    ranger
     wlr-randr
-    gnumake
-    curl
     dunst
     pavucontrol
-    sqlite
-    nix-direnv
     wlogout
     xdg-utils
-    gh
-    bat
-    lazydocker
-    appimage-run
-    unzip
-
-    #misc 
-    cava
-    rofi
-    nitch
-    wget
     grim
     grimblast
     slurp
-    wl-clipboard
     mpc-cli
-    tty-clock
-    eza
-    btop
     tokyo-night-gtk
-    fzf
-    zoxide
     playerctl
     pamixer
-    sptlrx
-    neofetch
-    ripgrep
-
-    inputs.nixvim.packages."x86_64-linux".default
-
-    #development
-    cmake
-    ninja
-    pkgconf
-    go
-    gopls
-    gcc
-    inputs.OpenSiv3D.packages."x86_64-linux".default
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {
@@ -87,6 +47,4 @@
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
   };
-
-  programs.home-manager.enable = true;
 }

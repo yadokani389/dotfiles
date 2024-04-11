@@ -34,4 +34,10 @@ in {
     username = "kani";
     modules = [ ./ipos/nixos.nix ];
   };
+  vine = mkNixosSystem {
+    system = "x86_64-linux";
+    hostname = "vine";
+    username = "kani";
+    modules = [ ./vine/nixos.nix ];
+  };
 }

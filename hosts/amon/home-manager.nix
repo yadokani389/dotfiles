@@ -1,10 +1,12 @@
 { inputs, pkgs, username, ... }: {
-  imports = [ ../../home/home.nix ];
+  imports = [ ../../home/gui/home.nix ../../home/cui/home.nix ];
 
   wayland.windowManager.hyprland.settings = {
     monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" "DP-1,1920x1080@75,1920x0,1" ];
     input.kb_layout = "jp";
   };
+
+  programs.home-manager.enable = true;
 
   home = {
     inherit username;

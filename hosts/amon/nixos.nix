@@ -1,5 +1,10 @@
 { inputs, pkgs, hostname, config, ... }: {
-  imports = [ ./hardware-configuration.nix ../nixos.nix ];
+  imports = [
+    inputs.hyprland.nixosModules.default
+    ./hardware-configuration.nix
+    ../nixos.nix
+    ../desktop
+  ];
 
   networking.hostName = hostname;
 

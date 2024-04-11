@@ -1,6 +1,4 @@
 { inputs, pkgs, username, ... }: {
-  imports = [ inputs.hyprland.nixosModules.default ./desktop ];
-
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
