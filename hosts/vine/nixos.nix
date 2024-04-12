@@ -1,5 +1,16 @@
-{ inputs, pkgs, hostname, config, ... }: {
-  imports = [ ./hardware-configuration.nix ../nixos.nix ];
+{ inputs, pkgs, hostname, username, config, ... }: {
+  imports = [ ../nixos.nix ];
 
   console.keyMap = "jp106";
+
+  wsl = {
+    enable = true;
+    defaultUser = username;
+    startMenuLaunchers = true;
+    useWindowsDriver = true;
+    wslConf={
+      network.hostname = hostname;
+      automount.mountFsTab = true;
+    };
+  };
 }

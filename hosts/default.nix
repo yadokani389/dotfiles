@@ -38,6 +38,6 @@ in {
     system = "x86_64-linux";
     hostname = "vine";
     username = "kani";
-    modules = [ ./vine/nixos.nix ];
+    modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
   };
 }

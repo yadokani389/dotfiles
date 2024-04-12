@@ -1,21 +1,4 @@
 { inputs, pkgs, username, ... }: {
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    initrd.kernelModules = [ "joydev" ];
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        default = "saved";
-        useOSProber = true;
-      };
-    };
-  };
-
-  networking.networkmanager.enable = true;
-
   time.timeZone = "Asia/Tokyo";
   i18n = {
     defaultLocale = "en_US.UTF-8";

@@ -6,7 +6,25 @@
     ../desktop
   ];
 
-  networking.hostName = hostname;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd.kernelModules = [ "joydev" ];
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        default = "saved";
+        useOSProber = true;
+      };
+    };
+  };
+
+  networking = {
+    networkmanager.enable = true;
+    hostName = hostname;
+  };
 
   console.keyMap = "jp106";
 
