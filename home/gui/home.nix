@@ -23,6 +23,7 @@
     playerctl
     pamixer
     brightnessctl
+    python311Packages.pillow
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  home.file.".config/ranger/rc.conf".text = ''
+set preview_images true
+set preview_images_method kitty
+  '';
+
   home.file.".config/kitty/kitty.conf".text = ''
 # vim:ft=kitty
 
@@ -11,10 +16,10 @@ shell zsh
 confirm_os_window_close 0
 
 # Font config
-font_family      JetBrainsMono Nerd Font
-bold_font        JetBrainsMono Nerd Font
-italic_font      JetBrainsMono Nerd Font
-bold_italic_font JetBrainsMono Nerd Font
+font_family      FiraCode Nerd Font
+bold_font        FiraCode Nerd Font
+italic_font      FiraCode Nerd Font
+bold_italic_font FiraCode Nerd Font
 
 font_size 14.0
 
