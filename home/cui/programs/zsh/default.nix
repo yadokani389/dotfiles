@@ -24,7 +24,7 @@
       syntaxHighlighting.enable = true;
 
       initExtra = ''
-        export PATH=$HOME/bin:/usr/local/bin:$PATH
+        export PATH=$HOME/bin:/usr/local/bin:$HOME/.npm-global/bin:$PATH
         # Path to your oh-my-zsh installation.
         #export ZSH="$HOME/.oh-my-zsh"
 
