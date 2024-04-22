@@ -28,7 +28,10 @@
 
   console.keyMap = "jp106";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services = {
+    xserver.videoDrivers = [ "nvidia" ];
+    tailscale.enable = true;
+  };
 
   hardware = {
     opengl = {
