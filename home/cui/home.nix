@@ -14,7 +14,6 @@
     unzip
     cava
     wget
-    wl-clipboard
     tty-clock
     eza
     btop

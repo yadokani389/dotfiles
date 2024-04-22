@@ -24,6 +24,7 @@
     pamixer
     brightnessctl
     python311Packages.pillow
+    wl-clipboard
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {
