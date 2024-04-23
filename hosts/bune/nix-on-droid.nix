@@ -1,6 +1,6 @@
 { inputs, pkgs, hostname, username, config, system, ... }: {
   environment = {
-    packages = with pkgs; [ vim ];
+    packages = with pkgs; [ vim git ];
     etcBackupExtension = ".bak";
   };
 
