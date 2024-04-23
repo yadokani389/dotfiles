@@ -14,9 +14,15 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = inputs:
-    let system = "x86_64-linux";
-    in { nixosConfigurations = import ./hosts inputs; };
+  outputs = inputs: {
+    nixosConfigurations = (import ./hosts inputs).nixosSystems;
+    nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droidSystems;
+  };
 }

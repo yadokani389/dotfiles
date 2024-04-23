@@ -20,24 +20,42 @@ let
         }
       ];
     };
+  mkNixOnDroidSystem = { system, hostname, username, modules }:
+    inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        overlays = [ inputs.nix-on-droid.overlays.default ];
+      };
+      inherit modules;
+    };
 
 in {
-  amon = mkNixosSystem {
-    system = "x86_64-linux";
-    hostname = "amon";
-    username = "kani";
-    modules = [ ./amon/nixos.nix ];
+  nixosSystems = {
+    amon = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "amon";
+      username = "kani";
+      modules = [ ./amon/nixos.nix ];
+    };
+    ipos = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "ipos";
+      username = "kani";
+      modules = [ ./ipos/nixos.nix ];
+    };
+    vine = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "vine";
+      username = "kani";
+      modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
+    };
   };
-  ipos = mkNixosSystem {
-    system = "x86_64-linux";
-    hostname = "ipos";
-    username = "kani";
-    modules = [ ./ipos/nixos.nix ];
-  };
-  vine = mkNixosSystem {
-    system = "x86_64-linux";
-    hostname = "vine";
-    username = "kani";
-    modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
+  nix-on-droidSystems = {
+    bune = mkNixOnDroidSystem {
+      system = "aarch64-linux";
+      hostname = "bune";
+      username = "kani";
+      modules = [ ./bune/nix-on-droid.nix ];
+    };
   };
 }
