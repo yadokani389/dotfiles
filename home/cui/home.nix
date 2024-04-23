@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, system, ... }: {
 
   imports = [ ./programs ./scripts ./themes ];
 
@@ -17,7 +17,6 @@
     tty-clock
     eza
     btop
-    tokyo-night-gtk
     fzf
     zoxide
     playerctl
@@ -25,7 +24,7 @@
     neofetch
     ripgrep
 
-    inputs.nixvim.packages."x86_64-linux".default
+    inputs.nixvim.packages."${system}".default
 
     #development
     cmake

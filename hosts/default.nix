@@ -15,14 +15,14 @@ let
             useGlobalPkgs = true;
             useUserPackages = true;
             users."${username}" = import ./${hostname}/home-manager.nix;
-            extraSpecialArgs = { inherit inputs username; };
+            extraSpecialArgs = { inherit inputs username system; };
           };
         }
       ];
     };
   mkNixOnDroidSystem = { system, hostname, username, modules }:
     inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-      extraSpecialArgs = { inherit inputs hostname username; };
+      extraSpecialArgs = { inherit inputs hostname username system; };
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [ inputs.nix-on-droid.overlays.default ];
@@ -51,7 +51,7 @@ in {
       modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
     };
   };
-  nix-on-droidSystems = {
+  nixOnDroidSystems = {
     bune = mkNixOnDroidSystem {
       system = "aarch64-linux";
       hostname = "bune";

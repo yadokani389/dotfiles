@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, system, ... }: {
 
   imports = [ ./programs ./themes ];
 
@@ -25,7 +25,8 @@
     brightnessctl
     python311Packages.pillow
     wl-clipboard
-    inputs.OpenSiv3D.packages."x86_64-linux".default
+    inputs.OpenSiv3D.packages."${system}".default
+    tokyo-night-gtk
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

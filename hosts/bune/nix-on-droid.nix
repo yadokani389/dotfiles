@@ -1,9 +1,8 @@
 { inputs, pkgs, hostname, username, config, ... }: {
-  imports = [ ../nixos.nix ];
-
-  environment.packages = with pkgs; [ vim ];
-
-  environment.etcBackupExtension = ".bak";
+  environment = {
+    packages = with pkgs; [ vim ];
+    etcBackupExtension = ".bak";
+  };
 
   system.stateVersion = "24.05";
 
@@ -11,7 +10,7 @@
     experimental-features = nix-command flakes
   '';
 
-  time.timeZone = "Tokyo/Japan";
+  time.timeZone = "Asia/Tokyo";
 
   home-manager = {
     config = ./home-manager.nix;
