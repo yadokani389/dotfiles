@@ -22,6 +22,7 @@ let
     };
   mkNixOnDroidSystem = { system, hostname, username, modules }:
     inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+      extraSpecialArgs = { inherit inputs hostname username; };
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [ inputs.nix-on-droid.overlays.default ];

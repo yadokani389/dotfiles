@@ -1,16 +1,6 @@
 { config, lib, pkgs, ... }: {
   imports = [ ./fonts ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
-        user = "kani";
-        command = "$SHELL -l";
-      };
-    };
-  };
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;

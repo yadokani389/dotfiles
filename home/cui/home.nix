@@ -35,6 +35,5 @@
     gopls
     gcc
     nodejs
-    inputs.OpenSiv3D.packages."x86_64-linux".default
   ];
 }

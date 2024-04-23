@@ -25,6 +25,7 @@
     brightnessctl
     python311Packages.pillow
     wl-clipboard
+    inputs.OpenSiv3D.packages."x86_64-linux".default
   ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
 
   dconf.settings = {

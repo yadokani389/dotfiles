@@ -1,21 +1,22 @@
 { inputs, pkgs, hostname, username, config, ... }: {
   imports = [ ../nixos.nix ];
 
-  enviroment.packages = with pkgs; [ vim ];
+  environment.packages = with pkgs; [ vim ];
 
-  enviroment.etcBackupExtension = ".bak";
+  environment.etcBackupExtension = ".bak";
 
   system.stateVersion = "24.05";
 
-  nix.etraOptions = ''
+  nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
 
   time.timeZone = "Tokyo/Japan";
 
-  inputs.home-manager = {
-    config = ./${hostname}/home-manager.nix;
-    backupFileExtensions = "hm-bak";
-    useGlobakPkgs = true;
+  home-manager = {
+    config = ./home-manager.nix;
+    backupFileExtension = "hm-bak";
+    useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs username; };
   };
 }
