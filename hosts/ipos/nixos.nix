@@ -1,6 +1,5 @@
 { inputs, pkgs, hostname, config, ... }: {
   imports = [
-    inputs.hyprland.nixosModules.default
     ./hardware-configuration.nix
     ../nixos.nix
     ../desktop
@@ -17,6 +16,7 @@
         efiSupport = true;
         default = "saved";
         useOSProber = true;
+        configurationLimit = 10;
       };
     };
   };

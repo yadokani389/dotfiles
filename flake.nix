@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     nixvim.url = "github:yadokani389/nixvim-config";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
