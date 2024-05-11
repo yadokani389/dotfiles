@@ -1,5 +1,9 @@
 { inputs, pkgs, username, system, ... }: {
-  imports = [ ../../home/gui/home.nix ../../home/cui/home.nix ];
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+    ../../home/gui/home.nix
+    ../../home/cui/home.nix
+  ];
 
   wayland.windowManager.hyprland.settings = {
     monitor = [ "eDP-1,1920x1200@60,0x0,1" ];
