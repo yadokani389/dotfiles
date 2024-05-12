@@ -7,7 +7,7 @@
       "$mainMod, C, killactive"
       "$mainMod, F, exec, nautilus"
       "$mainMod, V, togglefloating"
-      "$mainMod, R, exec, rofiWindow"
+      "$mainMod, R, exec, rofiWindow & sleep 0.2; hyprctl dispatch focuswindow '^(Rofi)'"
 
       ", Print, exec, grimblast --notify copy area"
       "$mainMod, Print, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""

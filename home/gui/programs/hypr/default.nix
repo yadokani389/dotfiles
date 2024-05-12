@@ -15,6 +15,7 @@
   
   wayland.windowManager.hyprland = {
     enable = true;
+    package = pkgs.hyprland;
   };
 
   home.file.".config/hypr/colors".text = ''

@@ -46,5 +46,6 @@
     };
     master = { new_is_master = true; };
     gestures = { workspace_swipe = false; };
+    misc = { focus_on_activate = true; };
   };
 }
