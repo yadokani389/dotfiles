@@ -4,6 +4,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
+    kernelParams = [ "nvidia-drm.fbdev=1" ];
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -25,7 +26,7 @@
 
   services = {
     xserver.videoDrivers = [ "nvidia" ];
-    tailscale.enable = true;
+    # tailscale.enable = true;
   };
 
   hardware = {
@@ -48,4 +49,5 @@
        WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
     fi
   '';
+
 }
