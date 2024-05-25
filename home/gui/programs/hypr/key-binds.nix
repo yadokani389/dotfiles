@@ -5,9 +5,8 @@
       "$mainMod, G, fullscreen"
       "$mainMod, RETURN, exec, kitty"
       "$mainMod, C, killactive"
-      "$mainMod, F, exec, nautilus"
       "$mainMod, V, togglefloating"
-      "$mainMod, R, exec, rofiWindow & sleep 0.2; hyprctl dispatch focuswindow '^(Rofi)'"
+      "$mainMod, F, exec, fuzzel"
 
       ", Print, exec, grimblast --notify copy area"
       "$mainMod, Print, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""

@@ -3,7 +3,7 @@
     ./dunst
     ./hypr
     ./kitty
-    ./rofi
+    ./fuzzel
     ./waybar
   ];
 }
