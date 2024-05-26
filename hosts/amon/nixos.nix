@@ -1,4 +1,4 @@
-{ inputs, pkgs, hostname, config, ... }: {
+{ inputs, pkgs, hostname, username, config, ... }: {
   imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
   boot = {
@@ -12,7 +12,7 @@
         device = "nodev";
         efiSupport = true;
         default = "saved";
-        # useOSProber = true;
+        useOSProber = true;
       };
     };
   };
@@ -49,5 +49,4 @@
        WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
     fi
   '';
-
 }

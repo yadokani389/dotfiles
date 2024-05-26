@@ -1,9 +1,10 @@
 {
   imports = [
-    ./dunst
+    ./dunst.nix
     ./hypr
-    ./kitty
-    ./fuzzel
-    ./waybar
+    ./kitty.nix
+    ./fuzzel.nix
+    ./waybar.nix
+    ./spotify-player.nix
   ];
 }
