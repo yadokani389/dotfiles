@@ -20,7 +20,6 @@
     fzf
     zoxide
     playerctl
-    sptlrx
     neofetch
     ripgrep
 
