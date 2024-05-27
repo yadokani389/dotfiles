@@ -17,12 +17,12 @@
       EDITOR = "nvim";
       BROWSER = "firefox";
       TERMINAL = "kitty";
-      __GL_VRR_ALLOWED = "1";
-      CLUTTER_BACKEND = "wayland";
-      WLR_RENDERER = "vulkan";
+      # __GL_VRR_ALLOWED = "1";
+      # CLUTTER_BACKEND = "wayland";
+      # WLR_RENDERER = "vulkan";
 
-      XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_DESKTOP = "Hyprland";
+      # XDG_CURRENT_DESKTOP = "Hyprland";
+      # XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
     };
   };

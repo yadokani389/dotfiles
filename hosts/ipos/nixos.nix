@@ -4,6 +4,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
+    kernelParams = [ "i915.force_probe=a7a1" ];
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
