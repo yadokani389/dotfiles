@@ -13,8 +13,12 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    configPackages = with pkgs; [ gnome.gnome-session ];
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-wlr ];
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [ "gtk" "hyprland" ];
+    };
+
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }
