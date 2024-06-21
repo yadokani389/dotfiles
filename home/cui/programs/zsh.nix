@@ -40,10 +40,6 @@
         ZSH_THEME="refined"
         REFINED_CHAR_SYMBOL="⚡"
 
-        # Rofi
-        export PATH=$HOME/.config/rofi/scripts:$PATH
-        export PATH=$PATH:~/Apps
-
         eval "$(zoxide init zsh)"
       '';
     };

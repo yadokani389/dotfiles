@@ -18,7 +18,7 @@
         efiSupport = true;
         default = "saved";
         useOSProber = true;
-        configurationLimit = 10;
+        configurationLimit = 5;
       };
     };
   };

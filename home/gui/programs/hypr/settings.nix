@@ -45,7 +45,7 @@
         "workspaces, 1, 3.5, ease"
       ];
     };
-    master = { new_is_master = true; };
+    master = { new_status = "master"; };
     gestures = { workspace_swipe = false; };
     misc = { focus_on_activate = true; };
   };
