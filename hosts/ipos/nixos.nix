@@ -30,7 +30,7 @@
 
   console.keyMap = "jp106";
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   services = {
     thermald.enable = true;
