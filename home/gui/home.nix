@@ -9,7 +9,6 @@
     discord
     flameshot
     obs-studio
-    vscode
     wlr-randr
     dunst
     pavucontrol

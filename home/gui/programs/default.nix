@@ -5,5 +5,6 @@
     ./kitty.nix
     ./fuzzel.nix
     ./waybar.nix
+    ./vscode.nix
   ];
 }

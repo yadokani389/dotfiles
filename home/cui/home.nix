@@ -22,6 +22,7 @@
     playerctl
     neofetch
     ripgrep
+    typst
 
     inputs.nixvim.packages."${system}".default
 
