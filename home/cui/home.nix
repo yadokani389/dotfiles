@@ -23,6 +23,8 @@
     neofetch
     ripgrep
     typst
+    typstyle
+    typst-preview
 
     inputs.nixvim.packages."${system}".default
 
