@@ -12,7 +12,6 @@
     wlr-randr
     dunst
     pavucontrol
-    wlogout
     xdg-utils
     grim
     grimblast
