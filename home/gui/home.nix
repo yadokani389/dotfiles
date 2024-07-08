@@ -2,7 +2,7 @@
 
   imports = [ ./programs ./themes ];
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     firefox
     kitty
     spotify
@@ -24,7 +24,11 @@
     python311Packages.pillow
     wl-clipboard
     tokyo-night-gtk
-  ]) ++ (with pkgs.gnome; [ nautilus zenity gnome-tweaks eog ]);
+    nautilus
+    zenity
+    gnome-tweaks
+    eog
+  ];
 
   dconf.settings = {
     "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
