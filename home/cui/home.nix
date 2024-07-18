@@ -24,7 +24,7 @@
     ripgrep
     typst
     typstyle
-    typst-preview
+    tinymist
 
     inputs.nixvim.packages."${system}".default
 
