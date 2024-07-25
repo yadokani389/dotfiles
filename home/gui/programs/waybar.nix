@@ -163,6 +163,10 @@
         "on-click" = "exec wallpaper_random";
         "tooltip" = false;
       };
+      "temperature" = {
+        "hwmon-path" = "/sys/class/hwmon/hwmon6/temp1_input";
+        "format" = " {temperatureC}°C";
+      };
       "custom/cava-internal" = {
         "exec" = "sleep 1s && cava-internal";
         "tooltip" = false;
