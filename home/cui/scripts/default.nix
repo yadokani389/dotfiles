@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ... }:
-
+{ pkgs, ... }:
 let
   cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
     cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
@@ -37,4 +36,27 @@ let
       echo "swww not found"
     fi
   '';
-in { home.packages = with pkgs; [ cava-internal wallpaper_random ]; }
+in {
+  home.packages = [ cava-internal wallpaper_random ];
+
+  systemd.user.services.wallpaper-changer = {
+    Unit.Description = "change wallpaper random";
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${wallpaper_random}/bin/wallpaper_random";
+    };
+  };
+
+  systemd.user.timers.wallpaper-changer = {
+    Unit = {
+      Description = "change wallpaper random";
+      Requires = [ "wallpaper-changer.service" ];
+    };
+    Timer = {
+      Unit = "wallpaper-changer.service";
+      OnBootSec = "10m";
+      OnUnitActiveSec = "10m";
+    };
+    Install.WantedBy = [ "timers.target" ];
+  };
+}
