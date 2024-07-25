@@ -1,5 +1,3 @@
-{ config, lib, pkgs, ... }:
-
 {
   programs.waybar = {
     enable = true;
@@ -21,12 +19,6 @@
           background-color: rgb(242, 143, 173);
           color: rgb(26, 24, 38);
         }
-      }
-      .warning {
-        color: orange;
-      }
-      .critical {
-        color: red;
       }
       .urgent {
         animation-name: blink_red;
@@ -83,6 +75,15 @@
       #mode, #clock, #memory, #temperature,#cpu,#custom-media, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
         padding-left: 10px;
         padding-right: 10px;
+      }
+      #battery {
+        color: rgb(181, 181, 224);
+      }
+      #battery.warning {
+        color: orange;
+      }
+      #battery.critical {
+        color: red;
       }
       #memory {
         color: rgb(181, 232, 224);
@@ -187,6 +188,7 @@
         "format-full" = "󰁹 {capacity}%";
         "format-icons" = [ "󰁻" "󰁿" "󰂁" ];
       };
+      "backlight" = { "format" = "󰖨 {percent}%"; };
       "clock" = {
         "interval" = 1;
         "format" = "{:%I:%M %p  %A %b %d}";
