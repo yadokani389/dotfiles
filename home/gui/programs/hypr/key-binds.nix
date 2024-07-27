@@ -7,10 +7,13 @@
       "$mainMod, C, killactive"
       "$mainMod, V, togglefloating"
       "$mainMod, F, exec, fuzzel"
+      "$mainMod, B, exec, pkill -SIGUSR1 waybar"
 
       ", Print, exec, grimblast --notify copy area"
-      "$mainMod, Print, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""
-      "$mainMod SHIFT, s, exec, grimblast --notify copysave area \"$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png\""
+      ''
+        $mainMod, Print, exec, grimblast --notify copysave area "$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png"''
+      ''
+        $mainMod SHIFT, s, exec, grimblast --notify copysave area "$HOME/Screenshots/$(date +%Y-%m-%dT%H:%M:%S).png"''
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
