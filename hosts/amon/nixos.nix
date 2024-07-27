@@ -1,4 +1,4 @@
-{ inputs, pkgs, hostname, username, config, ... }: {
+{ inputs, pkgs, hostname, config, ... }: {
   imports = [
     inputs.hyprland.nixosModules.default
     ./hardware-configuration.nix

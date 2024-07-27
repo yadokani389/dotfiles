@@ -1,4 +1,4 @@
-{
+{ lib, hostname, ... }: {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -164,7 +164,8 @@
         "tooltip" = false;
       };
       "temperature" = {
-        "hwmon-path" = "/sys/class/hwmon/hwmon6/temp1_input";
+        "hwmon-path" =
+          lib.mkIf (hostname == "ipos") "/sys/class/hwmon/hwmon6/temp1_input";
         "format" = " {temperatureC}°C";
       };
       "custom/cava-internal" = {
@@ -195,11 +196,7 @@
       "backlight" = { "format" = "󰖨 {percent}%"; };
       "clock" = {
         "interval" = 1;
-        "format" = "{:%I:%M %p  %A %b %d}";
-        "tooltip" = true;
-        "tooltip-format" = ''
-          {=%A; %d %B %Y}
-          <tt>{calendar}</tt>'';
+        "format" = "{:%H:%M %p  %A %b %d}";
       };
       "memory" = {
         "interval" = 1;

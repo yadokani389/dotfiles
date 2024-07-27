@@ -16,7 +16,7 @@ let
               useGlobalPkgs = true;
               useUserPackages = true;
               users."${username}" = import ./${hostname}/home-manager.nix;
-              extraSpecialArgs = { inherit inputs system username; };
+              extraSpecialArgs = { inherit inputs system username hostname; };
             };
           }
         ];

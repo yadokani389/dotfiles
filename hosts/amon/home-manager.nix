@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, system, ... }: {
+{ username, ... }: {
   imports = [ ../../home/gui/home.nix ../../home/cui/home.nix ];
 
   wayland.windowManager.hyprland.settings = {
