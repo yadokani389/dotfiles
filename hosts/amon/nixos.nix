@@ -25,6 +25,19 @@
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
+    firewall = {
+      enable = true;
+      allowedTCPPortRanges = [{
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+        ];
+      allowedUDPPortRanges = [{
+        from = 1714;
+        to = 1764;
+      } # KDE Connect
+        ];
+    };
   };
 
   console.keyMap = "jp106";
