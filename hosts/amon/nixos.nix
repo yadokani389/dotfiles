@@ -1,6 +1,5 @@
 { inputs, pkgs, hostname, config, ... }: {
   imports = [
-    inputs.hyprland.nixosModules.default
     ./hardware-configuration.nix
     ../nixos.nix
     ../desktop
@@ -58,7 +57,12 @@
     };
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+  };
 
   programs.zsh.interactiveShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
