@@ -24,6 +24,13 @@
     git.enable = true;
     regreet.enable = true;
     dconf.enable = true;
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 30d";
+      };
+    };
   };
 
   users.users."${username}" = {
@@ -42,14 +49,11 @@
   };
 
   nix = {
+    package = pkgs.lix;
+
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
     };
   };
 
