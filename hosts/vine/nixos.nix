@@ -1,4 +1,4 @@
-{ inputs, pkgs, hostname, username, config, ... }: {
+{ hostname, username, ... }: {
   imports = [ ../nixos.nix ];
 
   console.keyMap = "jp106";
@@ -8,7 +8,7 @@
     defaultUser = username;
     startMenuLaunchers = true;
     useWindowsDriver = true;
-    wslConf={
+    wslConf = {
       network.hostname = hostname;
       automount.mountFsTab = true;
     };

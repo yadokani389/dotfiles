@@ -1,8 +1,8 @@
-{ inputs, pkgs, system, ... }: {
+{ inputs, pkgs, ... }: {
 
   imports = [ ./programs ./scripts ./themes ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     ranger
     gnumake
     curl
@@ -26,8 +26,6 @@
     typstyle
     tinymist
 
-    inputs.nixvim.packages."${system}".default
-
     #development
     cmake
     ninja
@@ -44,5 +42,5 @@
       "rustfmt"
     ])
     rust-analyzer-nightly
-  ];
+  ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }

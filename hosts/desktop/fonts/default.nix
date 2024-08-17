@@ -1,6 +1,4 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [ jetbrains-mono ];
   fonts = {
     packages = with pkgs; [

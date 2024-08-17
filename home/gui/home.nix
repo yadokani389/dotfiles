@@ -1,4 +1,4 @@
-{ inputs, pkgs, system, ... }: {
+{ pkgs, ... }: {
 
   imports = [ ./programs ./themes ];
 

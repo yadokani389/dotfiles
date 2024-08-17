@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, system, ... }: {
+{ pkgs, username, ... }: {
   imports = [ ../../home/cui/home.nix ];
 
   programs.home-manager.enable = true;

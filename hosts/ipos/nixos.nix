@@ -1,9 +1,5 @@
-{ inputs, pkgs, hostname, config, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-    ../nixos.nix
-    ../desktop
-  ];
+{ inputs, pkgs, hostname, ... }: {
+  imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;

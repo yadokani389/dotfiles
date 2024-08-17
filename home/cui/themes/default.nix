@@ -1,1 +1,1 @@
-{ config, lib, pkgs, ... }: { imports = [ ./cava ]; }
+{ imports = [ ./cava.nix ]; }
