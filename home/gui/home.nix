@@ -7,7 +7,7 @@
     kitty
     spotify
     discord
-    flameshot
+    (flameshot.override { enableWlrSupport = true; })
     obs-studio
     wlr-randr
     dunst
