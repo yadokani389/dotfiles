@@ -7,7 +7,15 @@
     ];
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];
-    windowrule = [ "float,^(pavucontrol)$" ];
+    windowrule = [
+      "float,^(pavucontrol)$"
+      "fullscreenstate, flameshot"
+      "float,flameshot"
+      "monitor 0,flameshot"
+      "move 0 0,flameshot"
+      "workspace 0,flameshot"
+      "stayfocused,flameshot"
+    ];
     windowrulev2 = [ "opacity 0.8,class:^(kitty)$" ];
     input = {
       follow_mouse = 1;
