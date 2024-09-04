@@ -73,4 +73,6 @@
        Hyprland
     fi
   '';
+
+  virtualisation.waydroid.enable=true;
 }

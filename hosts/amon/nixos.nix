@@ -65,4 +65,6 @@
        WLR_NO_HARDWARE_CURSORS=1 Hyprland #prevents cursor disappear when using Nvidia drivers
     fi
   '';
+
+  virtualisation.waydroid.enable = true;
 }
