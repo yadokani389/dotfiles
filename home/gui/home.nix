@@ -28,6 +28,8 @@
     zenity
     gnome-tweaks
     eog
+    gimp
+    slack
   ];
 
   services = {
