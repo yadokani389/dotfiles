@@ -39,7 +39,7 @@
 
   services = {
     xserver.videoDrivers = [ "nvidia" ];
-    # tailscale.enable = true;
+    tailscale.enable = true;
   };
 
   hardware = {

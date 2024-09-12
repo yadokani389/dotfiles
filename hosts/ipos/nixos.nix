@@ -38,6 +38,8 @@
 
   console.keyMap = "jp106";
 
+  services.tailscale.enable = true;
+
   hardware.graphics.enable = true;
 
   services = {
