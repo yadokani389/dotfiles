@@ -1,6 +1,4 @@
-{ inputs, pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   imports = [ ./settings.nix ./key-binds.nix ];
 
   home.packages = with pkgs; [ waybar swww ];
@@ -10,8 +8,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-
-    package = inputs.hyprland.packages.${pkgs.system}.default;
 
     systemd = {
       variables = [ "--all" ];

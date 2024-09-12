@@ -1,4 +1,4 @@
-{ inputs, pkgs, hostname, ... }: {
+{ pkgs, hostname, ... }: {
   imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
   boot = {
@@ -61,12 +61,7 @@
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-  };
+  programs.hyprland.enable = true;
 
   programs.zsh.interactiveShellInit = ''
     if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -74,5 +69,5 @@
     fi
   '';
 
-  virtualisation.waydroid.enable=true;
+  virtualisation.waydroid.enable = true;
 }
