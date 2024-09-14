@@ -8,6 +8,8 @@
       "$mainMod, V, togglefloating"
       "$mainMod, F, exec, fuzzel"
       "$mainMod, B, exec, pkill -SIGUSR1 waybar"
+      "$mainMod, E, togglegroup"
+      "$mainMod, R, changegroupactive"
 
       ", Print, exec, flameshot gui"
 

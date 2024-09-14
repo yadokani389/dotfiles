@@ -48,5 +48,10 @@
     master = { new_status = "master"; };
     gestures = { workspace_swipe = false; };
     misc = { focus_on_activate = true; };
+    group = {
+      "col.border_active" = "rgba(cc77ffee) rgba(8877ffee) 45deg";
+      "col.border_inactive" = "rgba(595959aa)";
+      groupbar.enabled = false;
+    };
   };
 }
