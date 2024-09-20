@@ -13,7 +13,6 @@
       follow_mouse = 1;
       sensitivity = 0;
       touchpad.natural_scroll = true;
-      kb_options = "caps:swapescape";
     };
     general = {
       gaps_in = 5;
