@@ -5,17 +5,12 @@
   home.packages = with pkgs; [
     firefox
     kitty
-    spotify
-    discord
     (flameshot.override { enableWlrSupport = true; })
     obs-studio
     wlr-randr
     dunst
     pavucontrol
     xdg-utils
-    grim
-    grimblast
-    slurp
     mpc-cli
     tokyo-night-gtk
     playerctl
@@ -29,7 +24,6 @@
     gnome-tweaks
     eog
     gimp
-    slack
   ];
 
   services = {
