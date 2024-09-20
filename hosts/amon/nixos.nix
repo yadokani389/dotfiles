@@ -7,6 +7,7 @@
     kernelParams = [ "nvidia-drm.fbdev=1" ];
     loader = {
       efi.canTouchEfiVariables = true;
+      timeout = 1;
       grub = {
         enable = true;
         device = "nodev";
