@@ -66,6 +66,11 @@
     };
   };
 
+  nixpkgs.flake = {
+    setNixPath = false;
+    setFlakeRegistry = false;
+  };
+
   virtualisation = {
     docker = {
       enable = true;
