@@ -8,18 +8,17 @@ let
         inherit system;
         config.allowUnfree = true;
       };
-      modules = modules
-        ++ [{ nixpkgs.overlays = [ inputs.fenix.overlays.default ]; }] ++ [
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users."${username}" = import ./${hostname}/home-manager.nix;
-              extraSpecialArgs = { inherit inputs system username hostname; };
-            };
-          }
-        ];
+      modules = modules ++ [
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users."${username}" = import ./${hostname}/home-manager.nix;
+            extraSpecialArgs = { inherit inputs system username hostname; };
+          };
+        }
+      ];
     };
   mkNixOnDroidSystem = { system, hostname, username, modules }:
     inputs.nix-on-droid.lib.nixOnDroidConfiguration {

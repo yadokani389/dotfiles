@@ -25,22 +25,5 @@
     typst
     typstyle
     tinymist
-
-    #development
-    cmake
-    ninja
-    pkgconf
-    go
-    gopls
-    gcc
-    nodejs
-    (fenix.complete.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-      "rustfmt"
-    ])
-    rust-analyzer-nightly
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
