@@ -1,0 +1,12 @@
+{
+    "include": [
+        "common",
+        "default/katakana"
+    ],
+    "define": {
+        "keymap": {
+            "C-j": "commit",
+            "q": "set-input-mode-hiragana"
+        }
+    }
+}

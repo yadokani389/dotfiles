@@ -7,5 +7,6 @@
     ./waybar.nix
     ./hyprlock.nix
     ./wlogout.nix
+    ./libskk
   ];
 }
