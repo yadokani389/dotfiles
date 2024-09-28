@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   programs = {
     zsh = {
       enable = true;
@@ -22,26 +22,15 @@
       enableCompletion = true;
       syntaxHighlighting.enable = true;
 
-      plugins = [{
-        name = "zsh-nix-shell";
-        file = "nix-shell.plugin.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.8.0";
-          sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
-        };
-      }];
-
       initExtra = ''
         export PATH=$HOME/bin:/usr/local/bin:$HOME/.npm-global/bin:$PATH
         # Path to your oh-my-zsh installation.
         #export ZSH="$HOME/.oh-my-zsh"
 
-        ZSH_THEME="refined"
-        REFINED_CHAR_SYMBOL="⚡"
-
         eval "$(zoxide init zsh)"
+
+        # for refined theme
+        any-nix-shell zsh --info-right | sed 's/precmd () {/& \nsetopt localoptions nopromptsubst\nvcs_info\nprint -P "\\n$(repo_information) %F{yellow}$(cmd_exec_time)%f"\nunset cmd_timestamp/' | source /dev/stdin
       '';
     };
   };
