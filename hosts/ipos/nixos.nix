@@ -61,6 +61,7 @@
         STOP_CHARGE_THRESH_BAT0 = 90;
       };
     };
+    logind.lidSwitch = "ignore";
   };
 
   programs.hyprland.enable = true;
