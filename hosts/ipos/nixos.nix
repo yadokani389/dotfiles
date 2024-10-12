@@ -5,6 +5,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [ "i915.force_probe=a7a1" ];
+    tmp.useTmpfs = true;
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {

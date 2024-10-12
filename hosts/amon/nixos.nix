@@ -5,6 +5,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [ "nvidia-drm.fbdev=1" ];
+    tmp.useTmpfs = true;
     loader = {
       efi.canTouchEfiVariables = true;
       timeout = 1;
