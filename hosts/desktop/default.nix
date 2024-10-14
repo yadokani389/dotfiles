@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   imports = [ ./fonts ];
 
   services.greetd = {
     enable = true;
     settings = {
       initial_session = {
-        user = "kani";
+        user = username;
         command = "$SHELL -l";
       };
     };
