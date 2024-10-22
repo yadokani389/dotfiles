@@ -3,7 +3,7 @@
     "$mainMod" = "SUPER";
     bind = [
       "$mainMod, G, fullscreen"
-      "$mainMod, RETURN, exec, kitty"
+      "$mainMod, RETURN, exec, rio"
       "$mainMod, C, killactive"
       "$mainMod, V, togglefloating"
       "$mainMod, F, exec, fuzzel"
