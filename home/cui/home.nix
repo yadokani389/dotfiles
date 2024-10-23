@@ -26,5 +26,6 @@
     typstyle
     tinymist
     any-nix-shell
+    cachix
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
