@@ -3,7 +3,16 @@
   programs.rio = {
     enable = true;
     settings = {
-      fonts.size = 18;
+      fonts = {
+        size = 18;
+        family = "FiraCode Nerd Font";
+        regular = {
+          family = "FiraCode Nerd Font";
+          style = "Normal";
+          weight = 600;
+        };
+        extras = [{ family = "Noto Sans Mono CJK JP"; }];
+      };
       renderer = {
         performance = "High";
         backend = "Automatic";
