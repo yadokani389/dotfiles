@@ -11,7 +11,15 @@
           style = "Normal";
           weight = 600;
         };
-        extras = [{ family = "Noto Sans Mono CJK JP"; }];
+        emoji = {
+          family = "Noto Emoji";
+          style = "Normal";
+          weight = 600;
+        };
+        extras = [
+          { family = "Noto Sans Mono CJK JP"; }
+          { family = "Symbols Nerd Font Mono"; }
+        ];
       };
       renderer = {
         performance = "High";
