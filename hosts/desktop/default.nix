@@ -1,13 +1,27 @@
 { pkgs, username, ... }: {
   imports = [ ./fonts ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      initial_session = {
+  hardware.pulseaudio.enable = false;
+  services = {
+    blueman.enable = true;
+
+    displayManager = {
+      defaultSession = "hyprland";
+      autoLogin = {
+        enable = true;
         user = username;
-        command = "$SHELL -l";
       };
+    };
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+    };
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      jack.enable = true;
+      pulse.enable = true;
     };
   };
 

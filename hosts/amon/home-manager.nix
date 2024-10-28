@@ -16,7 +16,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "rio";
       # GBM_BACKEND = "nvidia-drm";
       # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       # LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
@@ -25,13 +25,13 @@
       # WLR_RENDERER_ALLOW_SOFTWARE = "1";
       # CLUTTER_BACKEND = "wayland";
       # WLR_RENDERER = "vulkan";
-      NIXOS_OZONE_WL = "1";
+      # NIXOS_OZONE_WL = "1";
 
       # XDG_CURRENT_DESKTOP = "Hyprland";
       # XDG_SESSION_DESKTOP = "Hyprland";
-      QT_QPA_PLATFORM = "wayland";
-      SDL_VIDEODRIVER = "wayland";
-      XDG_SESSION_TYPE = "wayland";
+      # QT_QPA_PLATFORM = "wayland";
+      # SDL_VIDEODRIVER = "wayland";
+      # XDG_SESSION_TYPE = "wayland";
     };
   };
 }

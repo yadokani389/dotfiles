@@ -6,23 +6,10 @@
   };
   time.hardwareClockInLocalTime = true;
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      jack.enable = true;
-      pulse.enable = true;
-    };
-  };
-
-  services.blueman.enable = true;
-
   programs = {
     zsh.enable = true;
     git.enable = true;
-    regreet.enable = true;
     dconf.enable = true;
     nh = {
       enable = true;
@@ -81,6 +68,30 @@
       };
     };
   };
+
+  environment.gnome.excludePackages = with pkgs; [
+    baobab # disk usage analyzer
+    cheese # photo booth
+    epiphany # web browser
+    gedit # text editor
+    simple-scan # document scanner
+    yelp # help viewer
+    file-roller # archive manager
+    geary # email client
+    seahorse # password manager
+
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-photos
+    gnome-weather
+  ];
 
   system.stateVersion = "24.05";
 }

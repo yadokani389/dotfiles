@@ -55,13 +55,8 @@
     };
   };
 
+  services.xserver.desktopManager.gnome.enable = true;
   programs.hyprland.enable = true;
-
-  programs.zsh.interactiveShellInit = ''
-    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-       Hyprland
-    fi
-  '';
 
   virtualisation.waydroid.enable = true;
 }

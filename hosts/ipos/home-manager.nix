@@ -16,15 +16,15 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "rio";
       # __GL_VRR_ALLOWED = "1";
       # CLUTTER_BACKEND = "wayland";
       # WLR_RENDERER = "vulkan";
-      NIXOS_OZONE_WL = "1";
+      # NIXOS_OZONE_WL = "1";
 
       # XDG_CURRENT_DESKTOP = "Hyprland";
       # XDG_SESSION_DESKTOP = "Hyprland";
-      XDG_SESSION_TYPE = "wayland";
+      # XDG_SESSION_TYPE = "wayland";
     };
   };
 }
