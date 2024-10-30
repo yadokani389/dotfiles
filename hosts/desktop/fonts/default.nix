@@ -9,9 +9,7 @@
       noto-fonts-extra
       twemoji-color-font
       fira-code-symbols
-      (nerdfonts.override {
-        fonts = [ "FiraCode" "JetBrainsMono" "Noto" "NerdFontsSymbolsOnly" ];
-      })
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Noto" ]; })
     ];
     fontconfig = {
       defaultFonts = {

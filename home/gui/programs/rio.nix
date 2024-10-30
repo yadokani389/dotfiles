@@ -18,7 +18,7 @@
         };
         extras = [
           { family = "Noto Sans Mono CJK JP"; }
-          { family = "Symbols Nerd Font Mono"; }
+          { family = "Unifont"; }
         ];
       };
       renderer = {
