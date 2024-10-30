@@ -39,16 +39,15 @@
 
   console.keyMap = "jp106";
 
-  services.tailscale.enable = true;
-
-  hardware.graphics.enable = true;
-
   services = {
+    tailscale.enable = true;
     thermald.enable = true;
     logind.lidSwitch = "ignore";
 
     xserver.desktopManager.gnome.enable = true;
   };
+
+  hardware.graphics.enable = true;
 
   programs.hyprland.enable = true;
 

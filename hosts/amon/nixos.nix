@@ -40,8 +40,11 @@
   console.keyMap = "jp106";
 
   services = {
-    xserver.videoDrivers = [ "nvidia" ];
     tailscale.enable = true;
+    xserver = {
+      videoDrivers = [ "nvidia" ];
+      desktopManager.gnome.enable = true;
+    };
   };
 
   hardware = {
@@ -55,7 +58,6 @@
     };
   };
 
-  services.xserver.desktopManager.gnome.enable = true;
   programs.hyprland.enable = true;
 
   virtualisation.waydroid.enable = true;

@@ -1,17 +1,11 @@
-{ pkgs, username, ... }: {
+{ pkgs, ... }: {
   imports = [ ./fonts ];
 
   hardware.pulseaudio.enable = false;
   services = {
     blueman.enable = true;
 
-    displayManager = {
-      defaultSession = "hyprland";
-      autoLogin = {
-        enable = true;
-        user = username;
-      };
-    };
+    displayManager.defaultSession = "hyprland";
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
