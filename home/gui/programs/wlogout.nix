@@ -16,6 +16,11 @@ in {
         keybind = "l";
       }
       {
+        label = "logout";
+        action = "sleep 1; hyprctl dispatch exit";
+        keybind = "e";
+      }
+      {
         "label" = "reboot";
         "action" = "reboot";
         "keybind" = "r";
@@ -53,6 +58,7 @@ in {
 
       ${lib.concatMapStringsSep "\n" bgImageSection [
         "lock"
+        "logout"
         "shutdown"
         "reboot"
       ]}

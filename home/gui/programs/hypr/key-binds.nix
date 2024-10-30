@@ -10,6 +10,7 @@
       "$mainMod, B, exec, pkill -SIGUSR1 waybar"
       "$mainMod, E, togglegroup"
       "$mainMod, R, changegroupactive"
+      "$mainMod, T, exec, wlogout"
 
       ", Print, exec, flameshot gui"
 

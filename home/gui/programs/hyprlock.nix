@@ -9,7 +9,6 @@
       };
 
       background = [{
-        # path = "screenshot";
         path = "/home/${username}/wallpapers/blender.png";
         blur_passes = 1;
       }];
