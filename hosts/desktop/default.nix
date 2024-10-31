@@ -8,7 +8,10 @@
     displayManager.defaultSession = "hyprland";
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        autoSuspend = false;
+      };
     };
 
     pipewire = {
