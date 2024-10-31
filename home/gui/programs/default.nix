@@ -8,5 +8,6 @@
     ./wlogout.nix
     ./libskk
     ./rio.nix
+    ./kitty.nix
   ];
 }

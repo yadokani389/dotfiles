@@ -4,7 +4,6 @@
 
   home.packages = with pkgs; [
     firefox
-    kitty
     (flameshot.override { enableWlrSupport = true; })
     obs-studio
     wlr-randr

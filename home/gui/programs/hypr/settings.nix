@@ -8,7 +8,8 @@
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];
     windowrule = [ "float,^(pavucontrol)$" ];
-    windowrulev2 = [ "opacity 0.8,class:^(rio)$" ];
+    windowrulev2 =
+      [ "opacity 0.8,class:^(rio)$" "opacity 0.8,class:^(kitty)$" ];
     input = {
       follow_mouse = 1;
       sensitivity = 0;
