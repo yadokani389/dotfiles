@@ -74,6 +74,7 @@
     cheese # photo booth
     epiphany # web browser
     gedit # text editor
+    orca # screen reader
     simple-scan # document scanner
     yelp # help viewer
     file-roller # archive manager
