@@ -11,6 +11,7 @@
     zsh.enable = true;
     git.enable = true;
     dconf.enable = true;
+    nix-ld.enable = true;
     nh = {
       enable = true;
       clean = {
