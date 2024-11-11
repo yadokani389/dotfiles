@@ -41,6 +41,7 @@
 
     settings = {
       auto-optimise-store = true;
+      keep-outputs = true;
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "${username}" ];
 
