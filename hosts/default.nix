@@ -7,18 +7,6 @@ let
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            libskk = prev.libskk.overrideAttrs (old: {
-              src = prev.fetchFromGitHub {
-                owner = "ueno";
-                repo = "libskk";
-                rev = "69cd8f4613725419201640b9555eb6118ff20e01";
-                sha256 = "sha256-gNnfMSFKui6fbrhN0GkiQgjC6TtoN3P6Dp5uR98ej3k=";
-              };
-            });
-          })
-        ];
       };
       modules = modules ++ [
         inputs.home-manager.nixosModules.home-manager
