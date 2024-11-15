@@ -27,5 +27,6 @@
     tinymist
     any-nix-shell
     cachix
+    tdf
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
