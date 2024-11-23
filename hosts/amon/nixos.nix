@@ -1,4 +1,4 @@
-{ pkgs, hostname, config, ... }: {
+{ pkgs, hostname, username, config, ... }: {
   imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
   boot = {
@@ -58,7 +58,14 @@
     };
   };
 
-  programs.hyprland.enable = true;
+  programs = {
+    hyprland.enable = true;
+    weylus = {
+      enable = true;
+      openFirewall = true;
+      users = [ username ];
+    };
+  };
 
   virtualisation.waydroid.enable = true;
 }
