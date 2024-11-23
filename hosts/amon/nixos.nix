@@ -17,6 +17,7 @@
         useOSProber = true;
       };
     };
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
   networking = {
