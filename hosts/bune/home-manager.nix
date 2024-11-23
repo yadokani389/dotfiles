@@ -1,8 +1,5 @@
 {
   imports = [ ../../home/cui/home.nix ];
 
-  home = {
-    # homeDirectory = "/home/${username}";
-    stateVersion = "24.05";
-  };
+  home.stateVersion = "24.05";
 }
