@@ -28,5 +28,6 @@
     any-nix-shell
     cachix
     tdf
+    comma
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
