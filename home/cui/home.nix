@@ -3,7 +3,6 @@
   imports = [ ./programs ./scripts ./themes ];
 
   home.packages = (with pkgs; [
-    ranger
     gnumake
     curl
     nix-direnv
