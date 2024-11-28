@@ -133,20 +133,14 @@
       #mpd {
         color: #c0caf5;
       }
-      #custom-cava-internal {
-        font-family: "Hack Nerd Font" ;
+      #cava {
         color: #87cefa;
       }
     '';
     settings = [{
       "layer" = "top";
       "position" = "top";
-      modules-left = [
-        "custom/launcher"
-        "temperature"
-        "custom/media"
-        "custom/cava-internal"
-      ];
+      modules-left = [ "custom/launcher" "temperature" "custom/media" "cava" ];
       modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
@@ -168,9 +162,12 @@
           lib.mkIf (hostname == "ipos") "/sys/class/hwmon/hwmon6/temp1_input";
         "format" = " {temperatureC}°C";
       };
-      "custom/cava-internal" = {
-        "exec" = "sleep 1s && cava-internal";
-        "tooltip" = false;
+      "cava" = {
+        framerate = 30;
+        bars = 12;
+        method = "pipewire";
+        bar_delimiter = 0;
+        format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
       "pulseaudio" = {
         "scroll-step" = 1;
