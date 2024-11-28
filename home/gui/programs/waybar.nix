@@ -100,6 +100,9 @@
       #custom-media {
         color: #fffaf0;
       }
+      #custom-sptlrx {
+        color: #fffaf0;
+      }
       #temperature {
         color: rgb(150, 205, 251);
       }
@@ -138,9 +141,14 @@
       }
     '';
     settings = [{
-      "layer" = "top";
-      "position" = "top";
-      modules-left = [ "custom/launcher" "temperature" "custom/media" "cava" ];
+      position = "top";
+      modules-left = [
+        "custom/launcher"
+        "temperature"
+        "custom/media"
+        "cava"
+        "custom/sptlrx"
+      ];
       modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
@@ -209,6 +217,11 @@
         "exec" = "playerctl metadata title";
         "tooltip" = false;
         "interval" = 10;
+      };
+      "custom/sptlrx" = {
+        "max-length" = 25;
+        "exec" = "show-lyrics";
+        "interval" = 1;
       };
       "network" = {
         "format-disconnected" = "󰯡 ";

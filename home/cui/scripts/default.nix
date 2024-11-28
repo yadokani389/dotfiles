@@ -1,8 +1,6 @@
 { pkgs, ... }:
 let
-  cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
-    cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
-  '';
+
   wallpaper_random = pkgs.writeShellScriptBin "wallpaper_random" ''
     if command -v swww >/dev/null 2>&1; then 
 
@@ -36,8 +34,36 @@ let
       echo "swww not found"
     fi
   '';
+  show-lyrics = pkgs.writeShellScriptBin "show-lyrics" ''
+    #!/bin/bash
+
+    # https://github.com/LanderMoerkerke/dotfiles/blob/976b9184d74592151baa702389fa01c2b885428c/.config/waybar/custom/spotify/show-lyrics.sh
+
+    # Simple script that determines what my polybar music module prints
+    # If spotify is playing it prints each lyric, if not then it prints
+    # last sources title
+
+    STATUS=$(playerctl  status)
+
+    # Check if programs installed
+    if ! command -v "playerctl" &>/dev/null && ! command -v "sptlrx" &>/dev/null; then
+        echo "Proper programs not installed!"
+        exit
+    fi
+
+    # Check if pipe is running
+    if [ -z "$(ps aux | grep -v 'grep' | grep 'sptlrx pipe')" ]; then
+        sptlrx pipe >>/tmp/lyrics &
+    fi
+
+    # Script's logic
+    if [ "$STATUS" == "Playing" ]; then
+        echo "$(tail -1 /tmp/lyrics)"
+    else
+        exit
+    fi'';
 in {
-  home.packages = [ cava-internal wallpaper_random ];
+  home.packages = [ wallpaper_random show-lyrics ];
 
   systemd.user.services.wallpaper-changer = {
     Unit.Description = "change wallpaper random";
