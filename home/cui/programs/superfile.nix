@@ -2,7 +2,7 @@
   home = {
     packages = with pkgs; [ superfile exiftool ];
 
-    file.".config/hypr/colors".text = ''
+    file.".config/superfile/config.toml".text = ''
       # More details are at https://superfile.netlify.app/configure/superfile-config/
       #
       # change your theme
