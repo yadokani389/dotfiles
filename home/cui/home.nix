@@ -30,5 +30,6 @@
     comma
     sptlrx
     cargo-compete
+    pahcer
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
