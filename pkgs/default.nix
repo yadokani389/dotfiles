@@ -3,6 +3,7 @@ let require = path: prev.callPackage (import path);
 in {
   wallpaper_random = require ./wallpaper_random { };
   show-lyrics = require ./show-lyrics { };
+  cargo-compete = require ./cargo-compete { };
 
   sptlrx = prev.sptlrx.overrideAttrs (_: rec {
     version = "1.2.2";

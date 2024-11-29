@@ -29,5 +29,6 @@
     tdf
     comma
     sptlrx
+    cargo-compete
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
