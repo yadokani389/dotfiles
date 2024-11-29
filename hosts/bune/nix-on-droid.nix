@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, system, ... }: {
+{ inputs, pkgs, hostname, username, system, ... }: {
   environment = {
     packages = with pkgs; [ vim git ];
     etcBackupExtension = ".bak";
@@ -30,6 +30,6 @@
     config = ./home-manager.nix;
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username system; };
+    extraSpecialArgs = { inherit inputs hostname username system; };
   };
 }

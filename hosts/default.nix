@@ -26,7 +26,8 @@ let
       extraSpecialArgs = { inherit inputs system hostname username; };
       pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [ inputs.nix-on-droid.overlays.default ];
+        overlays =
+          [ inputs.nix-on-droid.overlays.default (import ../pkgs/default.nix) ];
       };
       inherit modules;
     };
