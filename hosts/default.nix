@@ -7,6 +7,7 @@ let
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ (import ../pkgs/default.nix) ];
       };
       modules = modules ++ [
         inputs.home-manager.nixosModules.home-manager

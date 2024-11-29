@@ -23,6 +23,8 @@
     gnome-tweaks
     eog
     gimp
+    wallpaper_random
+    show-lyrics
   ];
 
   services = {
@@ -55,5 +57,26 @@
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
+  };
+
+  systemd.user.services.wallpaper-changer = {
+    Unit.Description = "change wallpaper random";
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.wallpaper_random}/bin/wallpaper_random";
+    };
+  };
+
+  systemd.user.timers.wallpaper-changer = {
+    Unit = {
+      Description = "change wallpaper random";
+      Requires = [ "wallpaper-changer.service" ];
+    };
+    Timer = {
+      Unit = "wallpaper-changer.service";
+      OnBootSec = "10m";
+      OnUnitActiveSec = "10m";
+    };
+    Install.WantedBy = [ "timers.target" ];
   };
 }
