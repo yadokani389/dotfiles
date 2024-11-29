@@ -31,5 +31,6 @@
     sptlrx
     cargo-compete
     pahcer
+    yazi
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
