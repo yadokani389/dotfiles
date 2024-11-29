@@ -137,6 +137,8 @@
         color: #c0caf5;
       }
       #cava {
+        padding-right: 10px;
+        padding-left: 10px;
         color: #87cefa;
       }
     '';
@@ -213,13 +215,13 @@
         "format" = "󰍛 {usage}%";
       };
       "custom/media" = {
-        "max-length" = 25;
+        "max-length" = 20;
         "exec" = "playerctl metadata title";
         "tooltip" = false;
         "interval" = 10;
       };
       "custom/sptlrx" = {
-        "max-length" = 25;
+        "max-length" = 35;
         "exec" = "show-lyrics";
         "interval" = 1;
       };
