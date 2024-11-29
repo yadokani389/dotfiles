@@ -43,11 +43,15 @@ let
     # If spotify is playing it prints each lyric, if not then it prints
     # last sources title
 
-    STATUS=$(playerctl  status)
+    STATUS=$(playerctl -p spotify_player status)
 
     # Check if programs installed
     if ! command -v "playerctl" &>/dev/null && ! command -v "sptlrx" &>/dev/null; then
         echo "Proper programs not installed!"
+        exit
+    fi
+
+    if [ "$STATUS" != "Playing" ]; then
         exit
     fi
 
@@ -59,9 +63,8 @@ let
     # Script's logic
     if [ "$STATUS" == "Playing" ]; then
         echo "$(tail -1 /tmp/lyrics)"
-    else
-        exit
-    fi'';
+    fi
+  '';
 in {
   home.packages = [ wallpaper_random show-lyrics ];
 
