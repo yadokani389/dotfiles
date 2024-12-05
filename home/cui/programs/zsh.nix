@@ -8,14 +8,18 @@
         plugins = [ "git" ];
       };
 
-      shellAliases = {
-        ls = "eza";
-        la = "eza -a";
-        ll = "eza -l";
-        lla = "eza -la";
-        rm = "rm -rf";
-        cp = "cp -r";
-        "$" = "";
+      zsh-abbr = {
+        enable = true;
+        abbreviations = {
+          ls = "eza";
+          la = "eza -a";
+          ll = "eza -l";
+          lla = "eza -la";
+          rm = "rm -rf";
+          cp = "cp -r";
+          "$" = "";
+          "lg" = "lazygit";
+        };
       };
 
       autosuggestion.enable = true;
