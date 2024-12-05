@@ -9,6 +9,7 @@
     gh
     bat
     lazydocker
+    lazygit
     appimage-run
     unzip
     # cava
