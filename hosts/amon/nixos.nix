@@ -2,7 +2,7 @@
   imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [ "nvidia-drm.fbdev=1" ];
     tmp.useTmpfs = true;
