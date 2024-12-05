@@ -33,5 +33,6 @@
     cargo-compete
     pahcer
     yazi
+    hstr
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
