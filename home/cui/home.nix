@@ -12,7 +12,7 @@
     lazygit
     appimage-run
     unzip
-    # cava
+    cava
     wget
     tty-clock
     eza
