@@ -17,4 +17,20 @@ in {
     vendorHash = "sha256-pExSQcYjqliZZg/91t52yk6UJ4QCbpToMpONIFUNkwc=";
     doCheck = false;
   });
+
+  evcxr = prev.evcxr.overrideAttrs (_: {
+    postInstall = let
+      wrap = exe: ''
+        wrapProgram $out/bin/${exe} \
+          --prefix PATH : ${
+            prev.lib.makeBinPath (with prev; [ cargo rustc gcc ])
+          } \
+          --set-default RUST_SRC_PATH "$RUST_SRC_PATH"
+      '';
+    in ''
+      ${wrap "evcxr"}
+      ${wrap "evcxr_jupyter"}
+      rm $out/bin/testing_runtime
+    '';
+  });
 }

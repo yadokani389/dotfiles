@@ -18,7 +18,8 @@
           rm = "rm -rf";
           cp = "cp -r";
           "$" = "";
-          "lg" = "lazygit";
+          lg = "lazygit";
+          rusti = "evcxr";
         };
       };
 

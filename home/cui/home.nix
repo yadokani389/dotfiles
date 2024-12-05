@@ -34,5 +34,6 @@
     pahcer
     yazi
     hstr
+    evcxr
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
 }
