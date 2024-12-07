@@ -22,9 +22,8 @@
 
   user.shell = "${pkgs.zsh}/bin/zsh";
 
-  terminal.font = "${
-      pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }
-    }/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFontMono-Regular.ttf";
+  terminal.font =
+    "${pkgs.nerd-fonts.jetbrains-mono}/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFontMono-Regular.ttf";
 
   home-manager = {
     config = ./home-manager.nix;
