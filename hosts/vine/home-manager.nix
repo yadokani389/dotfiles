@@ -1,5 +1,5 @@
 { pkgs, username, ... }: {
-  imports = [ ../../home/cui/home.nix ];
+  imports = [ ../../home/cui/minimal.nix ];
 
   programs.home-manager.enable = true;
 

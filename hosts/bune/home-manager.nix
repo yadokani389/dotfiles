@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ../../home/cui/home.nix ];
+  imports = [ ../../home/cui/minimal.nix ];
 
   home.stateVersion = "24.05";
 
