@@ -3,5 +3,14 @@
 
   home.stateVersion = "24.05";
 
-  home.packages = with pkgs; [ gnused gnugrep openssh gawk ps wol ];
+  home.packages = with pkgs; [
+    gnused
+    gnugrep
+    openssh
+    gawk
+    ps
+    wol
+    findutils
+    which
+  ];
 }
