@@ -26,6 +26,7 @@ let
       extraSpecialArgs = { inherit inputs system hostname username; };
       pkgs = import inputs.nixpkgs {
         inherit system;
+        config.allowUnfree = true;
         overlays =
           [ inputs.nix-on-droid.overlays.default (import ../pkgs/default.nix) ];
       };
