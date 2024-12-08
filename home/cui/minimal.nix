@@ -1,10 +1,9 @@
 { inputs, pkgs, ... }: {
 
-  imports = [ ./programs/zsh.nix ];
+  imports = [ ./programs/zsh.nix ./programs/direnv.nix ];
 
   home.packages = (with pkgs; [
     curl
-    nix-direnv
     bat
     lazydocker
     lazygit
