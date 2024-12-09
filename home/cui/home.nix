@@ -13,7 +13,6 @@
     typstyle
     tinymist
     tdf
-    comma
     sptlrx
     cargo-compete
     pahcer

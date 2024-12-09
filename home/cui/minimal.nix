@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }: {
 
-  imports = [ ./programs/zsh.nix ./programs/direnv.nix ];
+  imports =
+    [ ./programs/zsh.nix ./programs/direnv.nix ./programs/nix-index.nix ];
 
   home.packages = (with pkgs; [
     curl
@@ -17,7 +18,6 @@
     typst
     any-nix-shell
     cachix
-    comma
     yazi
     hstr
   ]) ++ [ inputs.nixvim.packages."${pkgs.system}".default ];
