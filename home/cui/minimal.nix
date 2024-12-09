@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }: {
 
-  imports =
-    [ ./programs/zsh.nix ./programs/direnv.nix ./programs/nix-index.nix ];
+  imports = [ ./programs/minimal.nix ];
 
   home.packages = (with pkgs; [
     curl
