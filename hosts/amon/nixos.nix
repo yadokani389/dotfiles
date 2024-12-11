@@ -69,4 +69,6 @@
   };
 
   virtualisation.waydroid.enable = true;
+
+  powerManagement.cpuFreqGovernor = "performance";
 }
