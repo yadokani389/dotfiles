@@ -53,6 +53,12 @@ in {
       username = "kani";
       modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
     };
+    gaap = mkNixosSystem {
+      system = "aarch64-linux";
+      hostname = "gaap";
+      username = "kani";
+      modules = [ ./gaap/nixos.nix ];
+    };
   };
   nixOnDroidSystems = {
     bune = mkNixOnDroidSystem {
