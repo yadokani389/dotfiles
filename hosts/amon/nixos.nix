@@ -70,5 +70,5 @@
 
   virtualisation.waydroid.enable = true;
 
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "ondemand";
 }
