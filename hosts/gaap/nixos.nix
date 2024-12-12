@@ -6,10 +6,15 @@
     tmp.useTmpfs = true;
   };
 
-  virtualisation.vmVariant.virtualisation.host.pkgs = import inputs.nixpkgs {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-    overlays = [ (import ../../pkgs/default.nix) ];
+  virtualisation.vmVariant.virtualisation = {
+    host.pkgs = import inputs.nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+      overlays = [ (import ../../pkgs/default.nix) ];
+    };
+    memorySize = 1024 * 16;
+    cores = 12;
+    graphics = false;
   };
 
   console.keyMap = "jp106";
