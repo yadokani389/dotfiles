@@ -20,7 +20,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "rio";
+      TERMINAL = "kitty";
       # __GL_VRR_ALLOWED = "1";
       # CLUTTER_BACKEND = "wayland";
       # WLR_RENDERER = "vulkan";
