@@ -22,6 +22,7 @@
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
+    timeServers = [ "ntp.nict.jp" ];
     firewall = {
       enable = true;
       allowedTCPPortRanges = [{

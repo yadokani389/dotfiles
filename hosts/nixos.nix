@@ -1,10 +1,10 @@
 { pkgs, username, ... }: {
   time.timeZone = "Asia/Tokyo";
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod.fcitx5.waylandFrontend = true;
   };
-  time.hardwareClockInLocalTime = true;
 
   security.rtkit.enable = true;
   programs = {
