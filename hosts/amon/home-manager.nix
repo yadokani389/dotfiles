@@ -6,7 +6,7 @@
   ];
 
   wayland.windowManager.hyprland.settings = {
-    monitor = [ "HDMI-A-1,1920x1080@75,0x0,1" "DP-1,1920x1080@75,1920x0,1" ];
+    monitor = [ "HDMI-A-1,preferred,auto,1.25" "DP-1,preferred,auto-right,1,transform,3" ];
     input.kb_layout = "jp";
   };
 
