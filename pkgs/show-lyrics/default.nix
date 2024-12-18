@@ -7,7 +7,7 @@ let
     # If spotify is playing it prints each lyric, if not then it prints
     # last sources title
 
-    STATUS=$(playerctl -p spotify_player status)
+    STATUS=$(playerctl status)
 
     if [ "$STATUS" != "Playing" ]; then
         exit
