@@ -26,5 +26,6 @@
   outputs = inputs: {
     nixosConfigurations = (import ./hosts inputs).nixosSystems;
     nixOnDroidConfigurations = (import ./hosts inputs).nixOnDroidSystems;
+    homeConfigurations = import ./home inputs;
   };
 }
