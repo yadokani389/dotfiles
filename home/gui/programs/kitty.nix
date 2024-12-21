@@ -12,6 +12,8 @@
 
       font_size 14.0
 
+      map ctrl+shift+; change_font_size all +2.0
+
       scrollback_pager nvim -c "setlocal autowriteall" -c "silent write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
 
       # The basic colors
