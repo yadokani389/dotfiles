@@ -14,7 +14,6 @@
         efiSupport = true;
         default = "saved";
         useOSProber = true;
-        configurationLimit = 5;
       };
     };
   };
@@ -22,14 +21,22 @@
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
-    timeServers = [ "ntp.nict.jp" ];
     firewall = {
       enable = true;
-      allowedTCPPortRanges = [{
-        from = 1714;
-        to = 1764;
-      } # KDE Connect
-        ];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        } # KDE Connect
+        {
+          from = 1420;
+          to = 1423;
+        }
+        {
+          from = 33110;
+          to = 33120;
+        }
+      ];
       allowedUDPPortRanges = [{
         from = 1714;
         to = 1764;
