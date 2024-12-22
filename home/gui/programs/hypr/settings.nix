@@ -16,6 +16,8 @@
       "move 0 0, class:^(flameshot)$"
       "pin, class:^(flameshot)$"
       "monitor 0, class:^(flameshot)$"
+      "float, class:^(umegaemochi)$"
+      "float, class:^(Waydroid)$"
     ];
     input = {
       follow_mouse = 1;
