@@ -7,13 +7,12 @@
     };
     settings = {
       global = {
-        rounded = "yes";
         origin = "top-right";
         monitor = "0";
         alignment = "left";
         vertical_alignment = "center";
         width = "400";
-        height = "400";
+        height = "(0,400)";
         scale = 0;
         gap_size = 0;
         progress_bar = true;
@@ -38,7 +37,7 @@
           "<b>%s</b>\\n%b"; # format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
         frame_color = "#232323";
         frame_width = 1;
-        offset = "15x15";
+        offset = "(15,15)";
         horizontal_padding = 10;
         icon_position = "left";
         indicate_hidden = "yes";
@@ -53,7 +52,7 @@
         show_indicators = "yes";
         shrink = "no";
         word_wrap = "yes";
-        browser = "/usr/bin/env librewolf -new-tab";
+        browser = "/usr/bin/env firefox -new-tab";
       };
 
       fullscreen_delay_everything = { fullscreen = "delay"; };
