@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
 
   imports = [ ./programs ./themes ];
 
@@ -12,5 +12,12 @@
     cargo-compete
     pahcer
     evcxr
+    mold
+    sccache
   ];
+
+  home.file.".cargo/config.toml".text = ''
+    [build]
+    rustc-wrapper = "${lib.getExe pkgs.sccache}"
+  '';
 }
