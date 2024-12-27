@@ -2,7 +2,6 @@ final: prev:
 let require = path: prev.callPackage (import path);
 in {
   wallpaper_random = require ./wallpaper_random { };
-  show-lyrics = require ./show-lyrics { };
   cargo-compete = require ./cargo-compete { };
   pahcer = require ./pahcer { };
 

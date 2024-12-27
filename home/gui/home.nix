@@ -24,7 +24,6 @@
     eog
     gimp
     wallpaper_random
-    show-lyrics
   ];
 
   services = {

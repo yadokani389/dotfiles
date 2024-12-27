@@ -215,15 +215,14 @@
         "format" = "󰍛 {usage}%";
       };
       "custom/media" = {
-        "max-length" = 20;
+        "max-length" = 100;
         "exec" = "playerctl metadata title";
         "tooltip" = false;
         "interval" = 10;
       };
       "custom/sptlrx" = {
-        "max-length" = 35;
-        "exec" = "show-lyrics";
-        "interval" = 1;
+        "max-length" = 100;
+        "exec" = "sptlrx pipe";
       };
       "network" = {
         "format-disconnected" = "󰯡 ";
