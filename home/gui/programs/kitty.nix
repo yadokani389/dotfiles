@@ -16,6 +16,9 @@
 
       scrollback_pager nvim -c "setlocal autowriteall" -c "silent write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
 
+      background_opacity 0.9
+      background_blur 50
+
       # The basic colors
       foreground              #CDD6F4
       background              #282A36

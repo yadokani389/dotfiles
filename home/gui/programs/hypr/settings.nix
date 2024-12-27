@@ -9,7 +9,6 @@
     source = [ "/home/kani/.config/hypr/colors" ];
     windowrule = [ "float,^(pavucontrol)$" ];
     windowrulev2 = [
-      "opacity 0.8, class:^(kitty)$"
       "noanim, class:^(flameshot)$"
       "fullscreenstate, class:(flameshot), title:(flameshot)"
       "float, class:^(flameshot)$"
@@ -33,12 +32,7 @@
     };
     decoration = {
       rounding = 5;
-      blur = {
-        enabled = true;
-        size = 7;
-        passes = 4;
-        new_optimizations = true;
-      };
+      blur.enabled = true;
       shadow = {
         enabled = true;
         range = 4;
