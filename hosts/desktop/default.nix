@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [ ./fonts ];
 
-  hardware.pulseaudio.enable = false;
   services = {
     blueman.enable = true;
 
