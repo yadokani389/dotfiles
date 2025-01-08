@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ pkgs, username, ... }: {
   imports = [
     ../../home/gui/home.nix
     ../../home/cui/home.nix
@@ -21,6 +21,8 @@
     inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
+
+    packages = with pkgs; [ ollama-cuda ];
 
     sessionVariables = {
       EDITOR = "nvim";
