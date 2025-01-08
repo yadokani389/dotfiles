@@ -8,5 +8,6 @@
     ./wlogout.nix
     ./libskk
     ./kitty.nix
+    ./vscode.nix
   ];
 }
