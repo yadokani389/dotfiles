@@ -5,18 +5,6 @@ in {
   cargo-compete = require ./cargo-compete { };
   pahcer = require ./pahcer { };
 
-  sptlrx = prev.sptlrx.overrideAttrs (_: rec {
-    version = "1.2.2";
-    src = prev.fetchFromGitHub {
-      owner = "raitonoberu";
-      repo = "sptlrx";
-      rev = "v${version}";
-      hash = "sha256-b8ALhEjolH0RH+I9HVQeOagPBi2isLNUxqKdj5u2O9s=";
-    };
-    vendorHash = "sha256-pExSQcYjqliZZg/91t52yk6UJ4QCbpToMpONIFUNkwc=";
-    doCheck = false;
-  });
-
   evcxr = prev.evcxr.overrideAttrs (_: {
     postInstall = let
       wrap = exe: ''
