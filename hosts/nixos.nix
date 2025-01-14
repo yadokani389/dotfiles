@@ -1,8 +1,5 @@
 { pkgs, username, ... }: {
-  time = {
-    timeZone = "Asia/Tokyo";
-    hardwareClockInLocalTime = true;
-  };
+  time.timeZone = "Asia/Tokyo";
 
   i18n = {
     defaultLocale = "en_US.UTF-8";

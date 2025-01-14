@@ -1,6 +1,8 @@
 { pkgs, hostname, username, config, ... }: {
   imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
 
+  time.hardwareClockInLocalTime = true;
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
