@@ -24,6 +24,7 @@
     eog
     gimp
     wallpaper_random
+    kooha
   ];
 
   services = {
