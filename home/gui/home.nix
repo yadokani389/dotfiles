@@ -25,6 +25,7 @@
     gimp
     wallpaper_random
     kooha
+    dragon
   ];
 
   services = {
