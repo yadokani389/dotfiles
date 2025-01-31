@@ -26,6 +26,7 @@
     wallpaper_random
     kooha
     xdragon
+    rquickshare
   ];
 
   services = {
