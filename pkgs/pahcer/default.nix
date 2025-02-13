@@ -1,12 +1,22 @@
-{ rustPlatform, fetchFromGitHub }:
+{ lib, rustPlatform, fetchFromGitHub }:
 rustPlatform.buildRustPackage rec {
   pname = "pahcer";
-  version = "0.1.1";
+  version = "0.2.0";
+
   src = fetchFromGitHub {
     owner = "terry-u16";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-f4R+I00uRl2fBOnHejBzjkM596rSJH7s8+/vySH3WnY=";
+    hash = "sha256-yZaIZUuxlVJt/wvke+M6ATHXQLLE7siRx73IexY3njU=";
   };
-  cargoHash = "sha256-WuOHNadz5/xeBcVNdQwZ1XbPbEKh6BFUG0LJp3wuIqw=";
+
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-yPeYrYZPGB2dxUQ7pvI+5WWXLEhX6DI2Qm2X2nqc3qQ=";
+
+  meta = {
+    description = "A tool to run tests for AtCoder Heuristic Contest (AHC)";
+    homepage = "https://github.com/terry-u16/pahcer";
+    license = with lib.licenses; [ asl20 mit ];
+    maintainers = [ ];
+  };
 }
