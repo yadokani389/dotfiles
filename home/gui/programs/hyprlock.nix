@@ -1,4 +1,5 @@
-{ username, ... }: {
+{ username, ... }:
+{
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -8,32 +9,38 @@
         no_fade_in = false;
       };
 
-      background = [{
-        path = "/home/${username}/wallpapers/blender.png";
-        blur_passes = 1;
-      }];
+      background = [
+        {
+          path = "/home/${username}/wallpapers/blender.png";
+          blur_passes = 1;
+        }
+      ];
 
-      input-field = [{
-        size = "300, 50";
+      input-field = [
+        {
+          size = "300, 50";
 
-        outline_thickness = 1;
+          outline_thickness = 1;
 
-        fade_on_empty = false;
-        placeholder_text = "Password...";
+          fade_on_empty = false;
+          placeholder_text = "Password...";
 
-        dots_spacing = 0.2;
-        dots_center = true;
-      }];
+          dots_spacing = 0.2;
+          dots_center = true;
+        }
+      ];
 
-      label = [{
-        text = "$TIME";
-        font_size = 50;
+      label = [
+        {
+          text = "$TIME";
+          font_size = 50;
 
-        position = "0, 150";
+          position = "0, 150";
 
-        valign = "center";
-        halign = "center";
-      }];
+          valign = "center";
+          halign = "center";
+        }
+      ];
     };
   };
 }

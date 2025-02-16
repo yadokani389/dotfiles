@@ -16,6 +16,7 @@
       "pin, class:^(flameshot)$"
       "monitor 0, class:^(flameshot)$"
       "float, class:^(umegaemochi)$"
+      "float, class:^(umegaemochi-control)$"
       "float, class:^(Waydroid)$"
     ];
     input = {
@@ -50,9 +51,15 @@
         "workspaces, 1, 3.5, ease"
       ];
     };
-    master = { new_status = "master"; };
-    gestures = { workspace_swipe = false; };
-    misc = { focus_on_activate = true; };
+    master = {
+      new_status = "master";
+    };
+    gestures = {
+      workspace_swipe = false;
+    };
+    misc = {
+      focus_on_activate = true;
+    };
     group = {
       "col.border_active" = "rgba(cc77ffee) rgba(8877ffee) 45deg";
       "col.border_inactive" = "rgba(595959aa)";

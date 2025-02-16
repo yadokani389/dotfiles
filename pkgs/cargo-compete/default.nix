@@ -1,4 +1,10 @@
-{ lib, rustPlatform, fetchFromGitHub, pkg-config, openssl }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  openssl,
+}:
 rustPlatform.buildRustPackage rec {
   pname = "cargo-compete";
   version = "0.10.7";
@@ -21,7 +27,10 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = " A Cargo subcommand for competitive programming";
     homepage = "https://github.com/qryxip/cargo-compete";
-    license = with lib.licenses; [ asl20 mit ];
+    license = with lib.licenses; [
+      asl20
+      mit
+    ];
     maintainers = [ ];
   };
 }

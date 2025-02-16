@@ -1,5 +1,16 @@
-{ pkgs, hostname, username, config, ... }: {
-  imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
+{
+  pkgs,
+  hostname,
+  username,
+  config,
+  ...
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../nixos.nix
+    ../desktop
+  ];
 
   time.hardwareClockInLocalTime = true;
 
@@ -41,11 +52,13 @@
           to = 33120;
         }
       ];
-      allowedUDPPortRanges = [{
-        from = 1714;
-        to = 1764;
-      } # KDE Connect
-        ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+        # KDE Connect
+      ];
     };
   };
 

@@ -1,6 +1,17 @@
-{ inputs, pkgs, hostname, username, system, ... }: {
+{
+  inputs,
+  pkgs,
+  hostname,
+  username,
+  system,
+  ...
+}:
+{
   environment = {
-    packages = with pkgs; [ vim git ];
+    packages = with pkgs; [
+      vim
+      git
+    ];
     etcBackupExtension = ".bak";
   };
 
@@ -22,13 +33,19 @@
 
   user.shell = "${pkgs.zsh}/bin/zsh";
 
-  terminal.font =
-    "${pkgs.nerd-fonts.jetbrains-mono}/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFontMono-Regular.ttf";
+  terminal.font = "${pkgs.nerd-fonts.jetbrains-mono}/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFontMono-Regular.ttf";
 
   home-manager = {
     config = ./home-manager.nix;
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs hostname username system; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        hostname
+        username
+        system
+        ;
+    };
   };
 }

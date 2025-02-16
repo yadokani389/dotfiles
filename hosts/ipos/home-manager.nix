@@ -1,4 +1,5 @@
-{ username, ... }: {
+{ username, ... }:
+{
   imports = [
     ../../home/gui/home.nix
     ../../home/cui/home.nix

@@ -1,4 +1,5 @@
-{ hostname, ... }: {
+{ hostname, ... }:
+{
   programs.spotify-player = {
     enable = true;
     settings = {

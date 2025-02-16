@@ -1,4 +1,10 @@
-{ writeShellScriptBin, symlinkJoin, makeWrapper, swww, gawk }:
+{
+  writeShellScriptBin,
+  symlinkJoin,
+  makeWrapper,
+  swww,
+  gawk,
+}:
 let
   wallpaper_random = writeShellScriptBin "wallpaper_random" ''
     mapfile -t output < <(swww query | awk -F ":" '{print $1}')
@@ -28,9 +34,14 @@ let
       swww img "''${list[$i]}" -t "$(printf "%s\n" "''${type[@]}" | shuf -n1)" -o "''${output[$i]}"
     done
   '';
-in symlinkJoin {
+in
+symlinkJoin {
   name = "wallpaper_random";
-  paths = [ wallpaper_random swww gawk ];
+  paths = [
+    wallpaper_random
+    swww
+    gawk
+  ];
   buildInputs = [ makeWrapper ];
   postBuild = "wrapProgram $out/bin/wallpaper_random --prefix PATH : $out/bin";
 }

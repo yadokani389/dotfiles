@@ -1,10 +1,16 @@
-{ pkgs, ... }: {
-  imports = [ ./settings.nix ./key-binds.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ./settings.nix
+    ./key-binds.nix
+  ];
 
-  home.packages = with pkgs; [ waybar swww ];
+  home.packages = with pkgs; [
+    waybar
+    swww
+  ];
 
-  systemd.user.targets.hyprland-session.Unit.Wants =
-    [ "xdg-desktop-autostart.target" ];
+  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 
   wayland.windowManager.hyprland = {
     enable = true;

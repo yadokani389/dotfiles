@@ -1,6 +1,12 @@
 inputs:
 let
-  mkNixosSystem = { system, hostname, username, modules }:
+  mkNixosSystem =
+    {
+      system,
+      hostname,
+      username,
+      modules,
+    }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { inherit inputs hostname username; };
@@ -16,24 +22,47 @@ let
             useGlobalPkgs = true;
             useUserPackages = true;
             users."${username}" = import ./${hostname}/home-manager.nix;
-            extraSpecialArgs = { inherit inputs system username hostname; };
+            extraSpecialArgs = {
+              inherit
+                inputs
+                system
+                username
+                hostname
+                ;
+            };
           };
         }
       ];
     };
-  mkNixOnDroidSystem = { system, hostname, username, modules }:
+  mkNixOnDroidSystem =
+    {
+      system,
+      hostname,
+      username,
+      modules,
+    }:
     inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-      extraSpecialArgs = { inherit inputs system hostname username; };
+      extraSpecialArgs = {
+        inherit
+          inputs
+          system
+          hostname
+          username
+          ;
+      };
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays =
-          [ inputs.nix-on-droid.overlays.default (import ../pkgs/default.nix) ];
+        overlays = [
+          inputs.nix-on-droid.overlays.default
+          (import ../pkgs/default.nix)
+        ];
       };
       inherit modules;
     };
 
-in {
+in
+{
   nixosSystems = {
     amon = mkNixosSystem {
       system = "x86_64-linux";
@@ -51,7 +80,10 @@ in {
       system = "x86_64-linux";
       hostname = "vine";
       username = "kani";
-      modules = [ ./vine/nixos.nix inputs.nixos-wsl.nixosModules.wsl ];
+      modules = [
+        ./vine/nixos.nix
+        inputs.nixos-wsl.nixosModules.wsl
+      ];
     };
     gaap = mkNixosSystem {
       system = "aarch64-linux";

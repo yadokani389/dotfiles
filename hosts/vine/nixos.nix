@@ -1,4 +1,5 @@
-{ hostname, username, ... }: {
+{ hostname, username, ... }:
+{
   imports = [ ../nixos.nix ];
 
   console.keyMap = "jp106";

@@ -1,6 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
-  imports = [ ./programs ./themes ];
+  imports = [
+    ./programs
+    ./themes
+  ];
 
   home = {
     packages = with pkgs; [

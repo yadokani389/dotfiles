@@ -1,24 +1,35 @@
 final: prev:
-let require = path: prev.callPackage (import path);
-in {
+let
+  require = path: prev.callPackage (import path);
+in
+{
   wallpaper_random = require ./wallpaper_random { };
   cargo-compete = require ./cargo-compete { };
   pahcer = require ./pahcer { };
 
   evcxr = prev.evcxr.overrideAttrs (_: {
-    postInstall = let
-      wrap = exe: ''
-        wrapProgram $out/bin/${exe} \
-          --prefix PATH : ${
-            prev.lib.makeBinPath (with prev; [ cargo rustc gcc ])
-          } \
-          --set-default RUST_SRC_PATH "$RUST_SRC_PATH"
+    postInstall =
+      let
+        wrap = exe: ''
+          wrapProgram $out/bin/${exe} \
+            --prefix PATH : ${
+              prev.lib.makeBinPath (
+                with prev;
+                [
+                  cargo
+                  rustc
+                  gcc
+                ]
+              )
+            } \
+            --set-default RUST_SRC_PATH "$RUST_SRC_PATH"
+        '';
+      in
+      ''
+        ${wrap "evcxr"}
+        ${wrap "evcxr_jupyter"}
+        rm $out/bin/testing_runtime
       '';
-    in ''
-      ${wrap "evcxr"}
-      ${wrap "evcxr_jupyter"}
-      rm $out/bin/testing_runtime
-    '';
   });
 
   swww = prev.swww.overrideAttrs (drv: rec {

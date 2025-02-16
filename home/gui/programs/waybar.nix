@@ -1,4 +1,5 @@
-{ lib, hostname, ... }: {
+{ lib, hostname, ... }:
+{
   programs.waybar = {
     enable = true;
     systemd = {
@@ -142,105 +143,129 @@
         color: #87cefa;
       }
     '';
-    settings = [{
-      position = "top";
-      modules-left = [
-        "custom/launcher"
-        "temperature"
-        "custom/media"
-        "cava"
-        "custom/sptlrx"
-      ];
-      modules-center = [ "clock" ];
-      modules-right = [
-        "pulseaudio"
-        "battery"
-        "backlight"
-        "memory"
-        "cpu"
-        "network"
-        "custom/powermenu"
-        "tray"
-      ];
-      "custom/launcher" = {
-        "format" = " ";
-        "on-click" = "exec wallpaper_random";
-        "tooltip" = false;
-      };
-      "temperature" = {
-        "hwmon-path" =
-          lib.mkIf (hostname == "ipos") "/sys/class/hwmon/hwmon6/temp1_input";
-        "format" = " {temperatureC}°C";
-      };
-      "cava" = {
-        framerate = 30;
-        bars = 12;
-        method = "pipewire";
-        bar_delimiter = 0;
-        format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-      };
-      "pulseaudio" = {
-        "scroll-step" = 1;
-        "format" = "{icon} {volume}%";
-        "format-muted" = "󰖁 Muted";
-        "format-icons" = { "default" = [ "" "" "" ]; };
-        "on-click" = "pamixer -t";
-        "tooltip" = false;
-      };
-      "battery" = {
-        "interval" = 1;
-        "states" = {
-          "warning" = 30;
-          "critical" = 15;
+    settings = [
+      {
+        position = "top";
+        modules-left = [
+          "custom/launcher"
+          "temperature"
+          "custom/media"
+          "cava"
+          "custom/sptlrx"
+        ];
+        modules-center = [ "clock" ];
+        modules-right = [
+          "pulseaudio"
+          "battery"
+          "backlight"
+          "memory"
+          "cpu"
+          "network"
+          "custom/powermenu"
+          "tray"
+        ];
+        "custom/launcher" = {
+          "format" = " ";
+          "on-click" = "exec wallpaper_random";
+          "tooltip" = false;
         };
-        "format" = "{icon} {capacity}%";
-        "format-charging" = "󰂄 {capacity}%";
-        "format-plugged" = "󱟦 {capacity}%";
-        "format-alt" = "{time} {icon}";
-        "format-full" = "󰁹 {capacity}%";
-        "format-icons" = [ "󰁻" "󰁿" "󰂁" ];
-      };
-      "backlight" = { "format" = "󰖨 {percent}%"; };
-      "clock" = {
-        "interval" = 1;
-        "format" = "{:%H:%M %p  %A %b %d}";
-      };
-      "memory" = {
-        "interval" = 1;
-        "format" = "󰻠 {percentage}%";
-        "states" = { "warning" = 85; };
-      };
-      "cpu" = {
-        "interval" = 1;
-        "format" = "󰍛 {usage}%";
-      };
-      "custom/media" = {
-        "max-length" = 100;
-        "exec" = "playerctl metadata title";
-        "tooltip" = false;
-        "interval" = 10;
-      };
-      "custom/sptlrx" = {
-        "max-length" = 100;
-        "exec" = "sptlrx pipe";
-      };
-      "network" = {
-        "format-disconnected" = "󰯡 ";
-        "format-ethernet" = "󰒢 ";
-        "format-linked" = "󰖪 ";
-        "format-wifi" = "󰖩 ";
-        "interval" = 10;
-        "tooltip" = false;
-      };
-      "custom/powermenu" = {
-        "format" = "";
-        "on-click" = "wlogout";
-        "tooltip" = false;
-      };
-      "tray" = {
-        "icon-size" = 15;
-        "spacing" = 5;
-      };
-    }];
+        "temperature" = {
+          "hwmon-path" = lib.mkIf (hostname == "ipos") "/sys/class/hwmon/hwmon6/temp1_input";
+          "format" = " {temperatureC}°C";
+        };
+        "cava" = {
+          framerate = 30;
+          bars = 12;
+          method = "pipewire";
+          bar_delimiter = 0;
+          format-icons = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
+        };
+        "pulseaudio" = {
+          "scroll-step" = 1;
+          "format" = "{icon} {volume}%";
+          "format-muted" = "󰖁 Muted";
+          "format-icons" = {
+            "default" = [
+              ""
+              ""
+              ""
+            ];
+          };
+          "on-click" = "pamixer -t";
+          "tooltip" = false;
+        };
+        "battery" = {
+          "interval" = 1;
+          "states" = {
+            "warning" = 30;
+            "critical" = 15;
+          };
+          "format" = "{icon} {capacity}%";
+          "format-charging" = "󰂄 {capacity}%";
+          "format-plugged" = "󱟦 {capacity}%";
+          "format-alt" = "{time} {icon}";
+          "format-full" = "󰁹 {capacity}%";
+          "format-icons" = [
+            "󰁻"
+            "󰁿"
+            "󰂁"
+          ];
+        };
+        "backlight" = {
+          "format" = "󰖨 {percent}%";
+        };
+        "clock" = {
+          "interval" = 1;
+          "format" = "{:%H:%M %p  %A %b %d}";
+        };
+        "memory" = {
+          "interval" = 1;
+          "format" = "󰻠 {percentage}%";
+          "states" = {
+            "warning" = 85;
+          };
+        };
+        "cpu" = {
+          "interval" = 1;
+          "format" = "󰍛 {usage}%";
+        };
+        "custom/media" = {
+          "max-length" = 100;
+          "exec" = "playerctl metadata title";
+          "tooltip" = false;
+          "interval" = 10;
+        };
+        "custom/sptlrx" = {
+          "max-length" = 100;
+          "exec" = "sptlrx pipe";
+        };
+        "network" = {
+          "format-disconnected" = "󰯡 ";
+          "format-ethernet" = "󰒢 ";
+          "format-linked" = "󰖪 ";
+          "format-wifi" = "󰖩 ";
+          "interval" = 10;
+          "tooltip" = false;
+        };
+        "custom/powermenu" = {
+          "format" = "";
+          "on-click" = "wlogout";
+          "tooltip" = false;
+        };
+        "tray" = {
+          "icon-size" = 15;
+          "spacing" = 5;
+        };
+      }
+    ];
   };
 }

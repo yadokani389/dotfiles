@@ -1,5 +1,10 @@
-{ pkgs, hostname, ... }: {
-  imports = [ ./hardware-configuration.nix ../nixos.nix ../desktop ];
+{ pkgs, hostname, ... }:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../nixos.nix
+    ../desktop
+  ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -37,11 +42,13 @@
           to = 33120;
         }
       ];
-      allowedUDPPortRanges = [{
-        from = 1714;
-        to = 1764;
-      } # KDE Connect
-        ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+        # KDE Connect
+      ];
     };
   };
 

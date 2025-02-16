@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   imports = [
     ../../home/gui/home.nix
     ../../home/cui/home.nix
@@ -11,7 +12,11 @@
       "DP-2, preferred, 1080x0, 1"
       "DP-1, preferred, 4920x0, 1"
     ];
-    workspace = [ "1, monitor:HDMI-A-1" "2, monitor:DP-2" "3, monitor:DP-1" ];
+    workspace = [
+      "1, monitor:HDMI-A-1"
+      "2, monitor:DP-2"
+      "3, monitor:DP-1"
+    ];
     input.kb_layout = "jp";
   };
 

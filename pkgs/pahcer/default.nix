@@ -1,4 +1,8 @@
-{ lib, rustPlatform, fetchFromGitHub }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+}:
 rustPlatform.buildRustPackage rec {
   pname = "pahcer";
   version = "0.2.0";
@@ -16,7 +20,10 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = "A tool to run tests for AtCoder Heuristic Contest (AHC)";
     homepage = "https://github.com/terry-u16/pahcer";
-    license = with lib.licenses; [ asl20 mit ];
+    license = with lib.licenses; [
+      asl20
+      mit
+    ];
     maintainers = [ ];
   };
 }

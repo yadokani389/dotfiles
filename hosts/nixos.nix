@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   time.timeZone = "Asia/Tokyo";
 
   i18n = {
@@ -24,9 +25,13 @@
   users.users."${username}" = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
-    hashedPassword =
-      "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+    ];
+    hashedPassword = "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
   };
 
   hardware = {
@@ -42,8 +47,14 @@
     settings = {
       auto-optimise-store = true;
       keep-outputs = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "${username}" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "${username}"
+      ];
 
       substituters = [
         "https://cache.nixos.org?priority=10"

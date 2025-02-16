@@ -1,4 +1,10 @@
-{ pkgs, inputs, username, ... }: {
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
+{
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     tmp.useTmpfs = true;
@@ -20,8 +26,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ];
-    hashedPassword =
-      "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
+    hashedPassword = "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
   };
 
   programs = {
@@ -30,8 +35,14 @@
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" "${username}" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [
+      "root"
+      "${username}"
+    ];
   };
 
   system.stateVersion = "24.05";
