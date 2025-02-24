@@ -32,7 +32,7 @@ in
       '';
   });
 
-  swww = prev.swww.overrideAttrs (drv: rec {
+  swww = prev.swww.overrideAttrs (_: rec {
     version = "2024-12-05";
 
     src = prev.fetchFromGitHub {
