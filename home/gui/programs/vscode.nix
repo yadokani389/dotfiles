@@ -6,6 +6,7 @@
       userSettings = {
         "files.autoSave" = "afterDelay";
         "files.insertFinalNewline" = true;
+        "workbench.colorTheme" = "Atom One Dark";
       };
       extensions =
         (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
@@ -16,6 +17,7 @@
           github.copilot
           coolcline.coolcline
           mkhl.direnv
+          akamud.vscode-theme-onedark
         ])
         ++ [
           inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release.github.copilot-chat
