@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -9,18 +9,18 @@
         "workbench.colorTheme" = "Atom One Dark";
       };
       extensions =
-        (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        (with pkgs.vscode-marketplace; [
           ms-vsliveshare.vsliveshare
           rust-lang.rust-analyzer
           tauri-apps.tauri-vscode
           vue.volar
-          (github.copilot.override { meta.license = [ ]; })
+          github.copilot
           coolcline.coolcline
           mkhl.direnv
           akamud.vscode-theme-onedark
         ])
         ++ [
-          (inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release.github.copilot-chat.override { meta.license = [ ]; })
+          pkgs.vscode-marketplace-release.github.copilot-chat
         ];
     };
   };
