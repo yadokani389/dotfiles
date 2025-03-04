@@ -19,6 +19,7 @@
       evcxr
       mold
       sccache
+      jq
     ];
 
     file.".cargo/config.toml".text = ''
