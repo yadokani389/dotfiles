@@ -11,17 +11,18 @@
       extensions =
         (with pkgs.vscode-marketplace; [
           ms-vsliveshare.vsliveshare
-          rust-lang.rust-analyzer
           tauri-apps.tauri-vscode
           vue.volar
           github.copilot
           coolcline.coolcline
+          saoudrizwan.claude-dev
           mkhl.direnv
           akamud.vscode-theme-onedark
         ])
-        ++ [
-          pkgs.vscode-marketplace-release.github.copilot-chat
-        ];
+        ++ (with pkgs.vscode-marketplace-release; [
+          github.copilot-chat
+          rust-lang.rust-analyzer
+        ]);
     };
   };
 }
