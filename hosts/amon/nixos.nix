@@ -1,7 +1,6 @@
 {
   pkgs,
   hostname,
-  username,
   config,
   ...
 }:
@@ -85,10 +84,13 @@
 
   programs = {
     hyprland.enable = true;
-    weylus = {
+    steam = {
       enable = true;
-      openFirewall = true;
-      users = [ username ];
+      remotePlay.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+      extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
     };
   };
 
