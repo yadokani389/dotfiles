@@ -9,7 +9,10 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
-    kernelParams = [ "i915.force_probe=a7a1" ];
+    kernelParams = [
+      "i915.force_probe=a7a1"
+      "kvm.enable_virt_at_load=0"
+    ];
     tmp.useTmpfs = true;
     loader = {
       efi.canTouchEfiVariables = true;
@@ -76,5 +79,8 @@
     };
   };
 
-  virtualisation.waydroid.enable = true;
+  virtualisation = {
+    waydroid.enable = true;
+    virtualbox.host.enable = true;
+  };
 }
