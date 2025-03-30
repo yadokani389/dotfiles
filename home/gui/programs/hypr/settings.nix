@@ -7,8 +7,7 @@
     ];
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];
-    windowrule = [ "float,^(pavucontrol)$" ];
-    windowrulev2 = [
+    windowrule = [
       "noanim, class:^(flameshot)$"
       "fullscreenstate, class:(flameshot), title:(flameshot)"
       "float, class:^(flameshot)$"
