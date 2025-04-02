@@ -21,4 +21,13 @@ in
       allowBuiltinFetchGit = true;
     };
   });
+
+  minecraftServers.vanilla-25w14craftmine = prev.minecraftServers.vanilla-1-20.overrideAttrs (_: {
+    version = "25w14craftmine";
+
+    src = prev.fetchurl {
+      url = "https://piston-data.mojang.com/v1/objects/4527a9019e37e001770787e4523b505f79cac4c5/server.jar";
+      hash = "sha256-ksF5A9v45zjb2HaKcYeXW2mwXSnJ5Hn42g6SIp+5Hsc=";
+    };
+  });
 }
