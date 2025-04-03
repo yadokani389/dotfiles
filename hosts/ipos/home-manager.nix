@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 {
   imports = [
     ../../home/gui/home.nix
@@ -17,8 +17,6 @@
     inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
-
-    packages = [ pkgs.minecraftServers.vanilla-25w14craftmine ];
 
     sessionVariables = {
       EDITOR = "nvim";
