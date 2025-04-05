@@ -21,4 +21,15 @@ in
       allowBuiltinFetchGit = true;
     };
   });
+
+  sptlrx = prev.sptlrx.overrideAttrs (old: rec {
+    version = "1.2.3";
+    src = prev.fetchFromGitHub {
+      owner = "raitonoberu";
+      repo = old.pname;
+      rev = "v${version}";
+      hash = "sha256-G8nYJZkXTtpgyBXrSO16hDVfsi3rmS92SddpmVgNN7Y=";
+    };
+    vendorHash = "sha256-NHXR1jwVNha9yNbI//l2OZ7Lny+9X0nB/Sg5m5gJEiQ=";
+  });
 }
