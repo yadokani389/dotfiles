@@ -16,5 +16,10 @@
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
     };
+
+    font = {
+      name = "Noto Sans CJK JP";
+      package = pkgs.noto-fonts-cjk-sans;
+    };
   };
 }
