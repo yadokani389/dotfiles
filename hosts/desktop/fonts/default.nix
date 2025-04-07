@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ jetbrains-mono ];
   fonts = {
     packages =
       (with pkgs; [
@@ -8,7 +7,6 @@
         noto-fonts-cjk-serif
         noto-fonts-emoji
         noto-fonts-monochrome-emoji
-        noto-fonts-extra
         twemoji-color-font
         fira-code-symbols
       ])
@@ -21,15 +19,16 @@
       defaultFonts = {
         serif = [
           "Noto Serif CJK JP"
-          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         sansSerif = [
           "Noto Sans CJK JP"
-          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         monospace = [
           "FiraCode Nerd Font"
-          "Noto Color Emoji"
+          "JetBrainsMono Nerd Font Mono"
+          "Noto Emoji"
         ];
         emoji = [ "Noto Emoji" ];
       };
