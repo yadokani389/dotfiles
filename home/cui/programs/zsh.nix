@@ -1,10 +1,14 @@
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
       enable = true;
       theme = "refined";
-      plugins = [ "git" ];
+      plugins = [
+        "git"
+        "ssh-agent"
+      ];
     };
 
     zsh-abbr = {
@@ -33,6 +37,8 @@
 
       # for refined theme
       any-nix-shell zsh --info-right | sed 's/precmd () {/& \nsetopt localoptions nopromptsubst\nvcs_info\nprint -P "\\n$(repo_information) %F{yellow}$(cmd_exec_time)%f"\nunset cmd_timestamp/' | source /dev/stdin
+
+      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
     '';
   };
 }
