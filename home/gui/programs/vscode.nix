@@ -14,7 +14,7 @@
           tauri-apps.tauri-vscode
           vue.volar
           github.copilot
-          coolcline.coolcline
+          rooveterinaryinc.roo-cline
           saoudrizwan.claude-dev
           mkhl.direnv
           akamud.vscode-theme-onedark
