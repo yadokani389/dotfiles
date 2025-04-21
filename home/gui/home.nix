@@ -31,7 +31,6 @@
     kooha
     xdragon
     rquickshare
-    stm32cubemx
   ];
 
   services = {
