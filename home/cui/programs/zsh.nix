@@ -30,7 +30,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
-    initExtra = ''
+    initContent = ''
       eval "$(zoxide init zsh)"
 
       bindkey '^ ' forward-word
