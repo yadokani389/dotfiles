@@ -31,7 +31,6 @@
     kooha
     xdragon
     rquickshare
-    aaa
   ];
 
   services = {
