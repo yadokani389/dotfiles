@@ -6,6 +6,8 @@ in
   wallpaper_random = require ./wallpaper_random { };
   cargo-compete = require ./cargo-compete { };
   pahcer = require ./pahcer { };
+  fcitx5-hazkey = require ./fcitx5-hazkey { };
+  fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
 
   swww = prev.swww.overrideAttrs (_: rec {
     version = "2024-12-05";
