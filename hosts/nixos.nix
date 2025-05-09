@@ -52,14 +52,9 @@
     setFlakeRegistry = false;
   };
 
-  virtualisation = {
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
   };
 
   environment.gnome.excludePackages = with pkgs; [
