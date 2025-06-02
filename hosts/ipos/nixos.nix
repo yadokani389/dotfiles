@@ -79,8 +79,5 @@
     };
   };
 
-  virtualisation = {
-    waydroid.enable = true;
-    virtualbox.host.enable = true;
-  };
+  virtualisation.waydroid.enable = true;
 }
