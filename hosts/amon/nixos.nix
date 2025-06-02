@@ -65,10 +65,8 @@
 
   services = {
     tailscale.enable = true;
-    xserver = {
-      videoDrivers = [ "nvidia" ];
-      desktopManager.gnome.enable = true;
-    };
+    xserver.videoDrivers = [ "nvidia" ];
+    desktopManager.gnome.enable = true;
   };
 
   hardware = {

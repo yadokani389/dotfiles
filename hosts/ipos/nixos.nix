@@ -62,7 +62,7 @@
     thermald.enable = true;
     logind.lidSwitch = "ignore";
 
-    xserver.desktopManager.gnome.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   hardware.graphics.enable = true;
