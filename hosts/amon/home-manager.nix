@@ -1,6 +1,12 @@
-{ pkgs, username, ... }:
+{
+  inputs,
+  pkgs,
+  username,
+  ...
+}:
 {
   imports = [
+    inputs.zen-browser.homeModules.beta
     ../../home/gui/home.nix
     ../../home/cui/home.nix
     ../../home/cui/minimal.nix
@@ -31,7 +37,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      BROWSER = "firefox";
+      BROWSER = "zen";
       TERMINAL = "kitty";
     };
   };

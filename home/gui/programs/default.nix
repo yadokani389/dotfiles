@@ -9,5 +9,6 @@
     ./libskk
     ./kitty.nix
     ./vscode.nix
+    ./zen-browser.nix
   ];
 }
