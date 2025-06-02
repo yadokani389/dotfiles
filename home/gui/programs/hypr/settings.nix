@@ -20,7 +20,7 @@
     ];
     input = {
       follow_mouse = 1;
-      sensitivity = 0;
+      sensitivity = 0.3;
       touchpad.natural_scroll = true;
     };
     general = {
