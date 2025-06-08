@@ -10,7 +10,7 @@
       # Remove close window confirm
       confirm_os_window_close 0
 
-      font_size 14.0
+      font_size 12.0
 
       map ctrl+shift+; change_font_size all +2.0
 
