@@ -6,12 +6,11 @@
     blueman.enable = true;
 
     displayManager.defaultSession = "hyprland";
-    xserver = {
+    xserver.enable = true;
+
+    displayManager.gdm = {
       enable = true;
-      displayManager.gdm = {
-        enable = true;
-        autoSuspend = false;
-      };
+      autoSuspend = false;
     };
 
     pipewire = {
