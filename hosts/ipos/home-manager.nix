@@ -1,4 +1,9 @@
-{ inputs, username, ... }:
+{
+  inputs,
+  pkgs,
+  username,
+  ...
+}:
 {
   imports = [
     inputs.zen-browser.homeModules.beta
@@ -18,6 +23,8 @@
     inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
+
+    packages = with pkgs; [ nvtopPackages.intel ];
 
     sessionVariables = {
       EDITOR = "nvim";
