@@ -33,7 +33,10 @@
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
 
-    packages = with pkgs; [ ollama-cuda ];
+    packages = with pkgs; [
+      ollama-cuda
+      nvtopPackages.nvidia
+    ];
 
     sessionVariables = {
       EDITOR = "nvim";
