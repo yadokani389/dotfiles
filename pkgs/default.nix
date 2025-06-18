@@ -1,4 +1,4 @@
-final: prev:
+inputs: final: prev:
 let
   require = path: prev.callPackage (import path);
 in
@@ -9,20 +9,7 @@ in
   fcitx5-hazkey = require ./fcitx5-hazkey { };
   fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
 
-  swww = prev.swww.overrideAttrs (_: rec {
-    version = "2024-12-05";
-
-    src = prev.fetchFromGitHub {
-      owner = "LGFae";
-      repo = "swww";
-      rev = "004dfd8b91c1d271b499bb99eb7c6746b1c2e069";
-      hash = "sha256-fgLWCUouo4RhTfLB5/aPT8mpU/GVgbUiubwrHYg0pTI=";
-    };
-    cargoDeps = prev.rustPlatform.importCargoLock {
-      lockFile = "${src}/Cargo.lock";
-      allowBuiltinFetchGit = true;
-    };
-  });
+  swww = inputs.swww.packages."${prev.system}".default;
 
   sptlrx = prev.sptlrx.overrideAttrs (old: rec {
     version = "1.2.3";
