@@ -81,6 +81,4 @@
     gnome-photos
     gnome-weather
   ];
-
-  system.stateVersion = "24.05";
 }

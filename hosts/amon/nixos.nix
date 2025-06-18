@@ -95,4 +95,6 @@
   virtualisation.waydroid.enable = true;
 
   powerManagement.cpuFreqGovernor = "ondemand";
+
+  system.stateVersion = "25.05";
 }
