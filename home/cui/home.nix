@@ -21,6 +21,7 @@
       mold
       sccache
       jq
+      claude-code
     ];
 
     file.".cargo/config.toml".text = ''
