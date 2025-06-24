@@ -1,4 +1,4 @@
-inputs: final: prev:
+final: prev:
 let
   require = path: prev.callPackage (import path);
 in
@@ -9,8 +9,6 @@ in
   fcitx5-hazkey = require ./fcitx5-hazkey { };
   fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
   human-in-the-loop = require ./human-in-the-loop { };
-
-  swww = inputs.swww.packages."${prev.system}".default;
 
   sptlrx = prev.sptlrx.overrideAttrs (old: rec {
     version = "1.2.3";

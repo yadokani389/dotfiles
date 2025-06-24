@@ -14,7 +14,7 @@ let
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (import ../pkgs/default.nix inputs)
+          (import ../pkgs/default.nix)
           inputs.nix-vscode-extensions.overlays.default
         ];
       };
@@ -58,7 +58,7 @@ let
         config.allowUnfree = true;
         overlays = [
           inputs.nix-on-droid.overlays.default
-          (import ../pkgs/default.nix inputs)
+          (import ../pkgs/default.nix)
         ];
       };
       inherit modules;

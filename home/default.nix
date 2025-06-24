@@ -19,7 +19,7 @@ let
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ (import ../pkgs/default.nix inputs) ];
+        overlays = [ (import ../pkgs/default.nix) ];
       };
       modules = [
         {
