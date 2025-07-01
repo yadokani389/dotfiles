@@ -15,7 +15,6 @@ let
         config.allowUnfree = true;
         overlays = [
           (import ../pkgs/default.nix)
-          inputs.nix-vscode-extensions.overlays.default
         ];
       };
       modules = modules ++ [
