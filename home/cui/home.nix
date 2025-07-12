@@ -23,6 +23,7 @@
       jq
       claude-code
       human-in-the-loop
+      difit
     ];
 
     file.".cargo/config.toml".text = ''
