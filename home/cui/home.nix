@@ -22,7 +22,6 @@
       sccache
       jq
       claude-code
-      human-in-the-loop
       difit
     ];
 
