@@ -11,6 +11,7 @@
       "$mainMod, E, togglegroup"
       "$mainMod, R, changegroupactive"
       "$mainMod, T, exec, wlogout"
+      "$mainMod, D, exec, pkill -SIGUSR1 whisper-typing"
 
       ", Print, exec, flameshot gui"
 
