@@ -31,6 +31,7 @@
     kooha
     xdragon
     rquickshare
+    pavucontrol
   ];
 
   services = {
