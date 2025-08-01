@@ -14,7 +14,7 @@
   time.hardwareClockInLocalTime = true;
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_12;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [ "nvidia-drm.fbdev=1" ];
     tmp.useTmpfs = true;
