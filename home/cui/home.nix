@@ -21,6 +21,7 @@
       mold
       sccache
       jq
+      gemini-cli
       difit
     ];
 
