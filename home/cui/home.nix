@@ -21,7 +21,6 @@
       mold
       sccache
       jq
-      claude-code
       difit
     ];
 
