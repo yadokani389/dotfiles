@@ -8,13 +8,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "difit";
-  version = "2.0.5";
+  version = "2.0.11";
 
   src = fetchFromGitHub {
     owner = "yoshiko-pg";
     repo = finalAttrs.pname;
     tag = "v${finalAttrs.version}";
-    hash = "sha256-68QDZXRK+LpX770O0CZRv5s0mqtBuVT0cbNPnqJGfTg=";
+    hash = "sha256-lKwoQVuMIjsJlRayYF46Khf6mwxjrlspT6H1bFvh4fU=";
   };
 
   nativeBuildInputs = [
@@ -25,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
   pnpmDeps = pnpm_9.fetchDeps {
     inherit (finalAttrs) pname version src;
     fetcherVersion = "2";
-    hash = "sha256-6k6TIbkUaQVh3iJkVS/fW2A8ooQlK27ARSwSnRB7kvQ=";
+    hash = "sha256-vq9jDuaQ7H6fAEOJ8cz0+zq1ySGn5PbovSlJL5hOU9k=";
   };
 
   buildPhase = ''
@@ -58,7 +58,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   meta = {
-    description = " A lightweight command-line tool that spins up a local web server to display Git commit diffs in a GitHub-like Files changed view";
+    description = "A lightweight command-line tool that spins up a local web server to display Git commit diffs in a GitHub-like Files changed view";
     homepage = "https://github.com/yoshiko-pg/difit";
     license = lib.licenses.mit;
   };
