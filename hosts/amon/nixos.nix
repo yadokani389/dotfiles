@@ -15,6 +15,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [ "nvidia-drm.fbdev=1" ];
     tmp.useTmpfs = true;
