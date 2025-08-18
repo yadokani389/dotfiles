@@ -24,7 +24,10 @@
     homeDirectory = "/home/${username}";
     stateVersion = "24.05";
 
-    packages = with pkgs; [ nvtopPackages.intel ];
+    packages = with pkgs; [
+      nvtopPackages.intel
+      btop
+    ];
 
     sessionVariables = {
       EDITOR = "nvim";

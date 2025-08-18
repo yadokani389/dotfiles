@@ -1,4 +1,3 @@
-{ username, ... }:
 {
   nix.settings = {
     substituters = [

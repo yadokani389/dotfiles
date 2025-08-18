@@ -36,6 +36,7 @@
     packages = with pkgs; [
       ollama-cuda
       nvtopPackages.nvidia
+      btop-cuda
     ];
 
     sessionVariables = {

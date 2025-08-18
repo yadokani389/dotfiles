@@ -11,7 +11,6 @@
       git
       gh
       cava
-      btop
       playerctl
       tdf
       sptlrx
