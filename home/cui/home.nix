@@ -22,6 +22,9 @@
       jq
       gemini-cli
       difit
+      claude-code
+      uv
+      nodejs
     ];
 
     file.".cargo/config.toml".text = ''
