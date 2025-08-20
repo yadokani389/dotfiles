@@ -9,6 +9,7 @@ in
   fcitx5-hazkey = require ./fcitx5-hazkey { };
   fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
   difit = require ./difit { };
+  audiorelay = require ./audiorelay { };
 
   sptlrx = prev.sptlrx.overrideAttrs (old: rec {
     version = "1.2.3";

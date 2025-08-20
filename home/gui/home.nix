@@ -32,6 +32,7 @@
     xdragon
     rquickshare
     pavucontrol
+    audiorelay
   ];
 
   services = {
