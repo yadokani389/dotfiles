@@ -9,5 +9,6 @@
     ./libskk
     ./kitty.nix
     ./zen-browser.nix
+    ./flameshot.nix
   ];
 }

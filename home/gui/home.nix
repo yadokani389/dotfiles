@@ -8,7 +8,6 @@
 
   home.packages = with pkgs; [
     firefox
-    (flameshot.override { enableWlrSupport = true; })
     obs-studio
     wlr-randr
     dunst
