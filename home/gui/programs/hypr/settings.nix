@@ -53,9 +53,10 @@
     master = {
       new_status = "master";
     };
-    gestures = {
-      workspace_swipe = false;
-    };
+    gesture = [
+      "2, pinch, fullscreen"
+      "3, horizontal, workspace"
+    ];
     misc = {
       focus_on_activate = true;
     };
