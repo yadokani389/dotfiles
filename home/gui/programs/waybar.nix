@@ -101,9 +101,6 @@
       #custom-media {
         color: #fffaf0;
       }
-      #custom-sptlrx {
-        color: #fffaf0;
-      }
       #temperature {
         color: rgb(150, 205, 251);
       }
@@ -151,7 +148,6 @@
           "temperature"
           "custom/media"
           "cava"
-          "custom/sptlrx"
         ];
         modules-center = [ "clock" ];
         modules-right = [
@@ -243,10 +239,6 @@
           "exec" = "playerctl metadata title";
           "tooltip" = false;
           "interval" = 10;
-        };
-        "custom/sptlrx" = {
-          "max-length" = 100;
-          "exec" = "sptlrx pipe";
         };
         "network" = {
           "format-disconnected" = "󰯡 ";

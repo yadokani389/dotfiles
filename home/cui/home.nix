@@ -13,7 +13,6 @@
       cava
       playerctl
       tdf
-      sptlrx
       cargo-compete
       pahcer
       evcxr
