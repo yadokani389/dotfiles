@@ -54,7 +54,7 @@
       new_status = "master";
     };
     gesture = [
-      "2, pinch, fullscreen"
+      "3, pinch, fullscreen"
       "3, horizontal, workspace"
     ];
     misc = {
