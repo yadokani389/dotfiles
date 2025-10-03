@@ -20,7 +20,6 @@
       sccache
       jq
       gemini-cli
-      difit
       claude-code
       uv
       nodejs
