@@ -7,7 +7,7 @@
 }:
 let
   wallpaper_random = writeShellScriptBin "wallpaper_random" ''
-    mapfile -t output < <(swww query | awk -F ":" '{print $1}')
+    mapfile -t output < <(swww query | awk '{print $2}' | awk -F: '{print $1}')
 
     cached_image_paths=()
 
