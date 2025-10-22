@@ -32,6 +32,7 @@
     rquickshare
     pavucontrol
     audiorelay
+    wayvnc
   ];
 
   services = {
