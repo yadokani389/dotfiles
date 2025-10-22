@@ -7,7 +7,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_16;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [
       "i915.force_probe=a7a1"
@@ -31,6 +31,9 @@
     hostName = hostname;
     firewall = {
       enable = true;
+      allowedTCPPorts = [
+        5900 # wayvnc
+      ];
       allowedTCPPortRanges = [
         {
           from = 1714;
@@ -53,8 +56,7 @@
         {
           from = 1714;
           to = 1764;
-        }
-        # KDE Connect
+        } # KDE Connect
       ];
     };
   };
@@ -64,7 +66,7 @@
   services = {
     tailscale.enable = true;
     thermald.enable = true;
-    logind.lidSwitch = "ignore";
+    logind.settings.Login.HandleLidSwitch = "ignore";
 
     desktopManager.gnome.enable = true;
   };
