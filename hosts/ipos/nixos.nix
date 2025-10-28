@@ -64,7 +64,10 @@
   console.keyMap = "jp106";
 
   services = {
-    tailscale.enable = true;
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
+    };
     thermald.enable = true;
     logind.settings.Login.HandleLidSwitch = "ignore";
 
