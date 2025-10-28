@@ -7,7 +7,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_16;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [
       "i915.force_probe=a7a1"
