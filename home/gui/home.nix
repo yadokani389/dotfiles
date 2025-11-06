@@ -13,14 +13,13 @@
     dunst
     pavucontrol
     xdg-utils
-    mpc-cli
-    tokyo-night-gtk
+    mpc
+    tokyonight-gtk-theme
     playerctl
     pamixer
     brightnessctl
     python311Packages.pillow
     wl-clipboard
-    tokyo-night-gtk
     nautilus
     zenity
     gnome-tweaks
@@ -28,7 +27,7 @@
     gimp
     wallpaper_random
     kooha
-    xdragon
+    dragon-drop
     rquickshare
     pavucontrol
     audiorelay
