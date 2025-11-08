@@ -20,9 +20,10 @@
       sccache
       jq
       gemini-cli
-      claude-code
+      codex
       uv
       nodejs
+      fd
     ];
 
     file.".cargo/config.toml".text = ''
