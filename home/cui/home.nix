@@ -24,6 +24,7 @@
       uv
       nodejs
       fd
+      unar
     ];
 
     sessionVariables = {
