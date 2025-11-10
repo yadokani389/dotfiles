@@ -10,5 +10,6 @@
     ./kitty.nix
     ./zen-browser.nix
     ./flameshot.nix
+    ./i18n.nix
   ];
 }

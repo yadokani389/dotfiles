@@ -7,6 +7,7 @@ in
   cargo-compete = require ./cargo-compete { };
   pahcer = require ./pahcer { };
   fcitx5-hazkey = require ./fcitx5-hazkey { };
+  hazkey-zenzai = require ./hazkey-zenzai { };
   fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
   audiorelay = require ./audiorelay { };
 }
