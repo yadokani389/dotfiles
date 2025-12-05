@@ -1,4 +1,9 @@
-{ pkgs, hostname, ... }:
+{
+  pkgs,
+  hostname,
+  config,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -8,6 +13,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     initrd.kernelModules = [ "joydev" ];
     kernelParams = [
       "i915.force_probe=a7a1"
