@@ -17,7 +17,6 @@
       pahcer
       evcxr
       mold
-      sccache
       jq
       gemini-cli
       codex
