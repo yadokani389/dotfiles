@@ -32,6 +32,8 @@
     pavucontrol
     audiorelay
     wayvnc
+    grim
+    slurp
   ];
 
   services = {

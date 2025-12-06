@@ -13,7 +13,8 @@
       "$mainMod, T, exec, wlogout"
       "$mainMod, D, exec, pkill -SIGUSR1 whisper-typing"
 
-      ", Print, exec, flameshot gui"
+      '', Print, exec, grim -g "$(slurp)" - | wl-copy''
+      "$mainMod, Print, exec, flameshot gui"
 
       # Move focus with mainMod + arrow keys
       "$mainMod, left, movefocus, l"
