@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
 {
 
   imports = [ ./programs/minimal.nix ];
@@ -20,5 +25,5 @@
       cachix
       yazi
     ])
-    ++ [ inputs.nvf.packages."${pkgs.system}".default ];
+    ++ [ inputs.nvf.packages."${system}".default ];
 }
