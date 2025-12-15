@@ -11,15 +11,11 @@
       git
       gh
       cava
-      playerctl
       tdf
-      cargo-compete
-      pahcer
-      evcxr
       mold
       jq
       gemini-cli
-      codex
+      # codex
       uv
       nodejs
       fd

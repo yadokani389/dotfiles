@@ -7,29 +7,22 @@
   ];
 
   home.packages = with pkgs; [
-    firefox
     obs-studio
     wlr-randr
     dunst
     pavucontrol
     xdg-utils
-    mpc
     tokyonight-gtk-theme
     playerctl
     pamixer
     brightnessctl
-    python311Packages.pillow
     wl-clipboard
     nautilus
-    zenity
-    gnome-tweaks
-    eog
     gimp
     wallpaper_random
     kooha
     dragon-drop
     rquickshare
-    pavucontrol
     audiorelay
     wayvnc
     grim

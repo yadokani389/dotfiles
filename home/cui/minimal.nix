@@ -12,9 +12,7 @@
     (with pkgs; [
       curl
       bat
-      lazydocker
       lazygit
-      appimage-run
       unzip
       wget
       eza
