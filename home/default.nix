@@ -6,6 +6,13 @@ let
       username,
       modules,
     }:
+    let
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [ (import ../pkgs/default.nix) ];
+      };
+    in
     inputs.home-manager.lib.homeManagerConfiguration {
       extraSpecialArgs = {
         inherit
@@ -14,14 +21,11 @@ let
           username
           ;
       };
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [ (import ../pkgs/default.nix) ];
-      };
+      inherit pkgs;
       modules = [
         {
           imports = modules;
+          nix.package = pkgs.nix;
           home = {
             inherit username;
             homeDirectory = "/home/${username}";
