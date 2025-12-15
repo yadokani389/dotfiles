@@ -3,7 +3,6 @@ let
   mkHome =
     {
       system,
-      hostname,
       username,
       modules,
     }:
@@ -12,7 +11,6 @@ let
         inherit
           inputs
           system
-          hostname
           username
           ;
       };
@@ -37,13 +35,11 @@ in
 {
   home-cli-minimal = mkHome {
     system = "x86_64-linux";
-    hostname = "home-minimal";
     username = "kani";
     modules = [ ./cui/minimal.nix ];
   };
   home-cli-full = mkHome {
     system = "x86_64-linux";
-    hostname = "home-full";
     username = "kani";
     modules = [
       ./cui/minimal.nix
@@ -52,7 +48,6 @@ in
   };
   home-gui = mkHome {
     system = "x86_64-linux";
-    hostname = "home-gui";
     username = "kani";
     modules = [
       ./cui/minimal.nix
