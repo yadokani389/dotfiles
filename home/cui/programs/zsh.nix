@@ -48,6 +48,16 @@
         [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
         rm -f -- "$tmp"
       }
+
+      zoxide_zi_insert() {
+        local dir
+        dir="$(zoxide query -i)" || return
+        zle -U "$dir"
+        zle reset-prompt
+      }
+
+      zle -N zoxide_zi_insert
+      bindkey '^G' zoxide_zi_insert
     '';
   };
 }
