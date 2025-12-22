@@ -19,6 +19,9 @@
       background_opacity 0.9
       background_blur 50
 
+      allow_remote_control yes
+      dynamic_background_opacity yes
+
       # The basic colors
       foreground              #CDD6F4
       background              #282A36
