@@ -15,7 +15,7 @@
       mold
       jq
       gemini-cli
-      # codex
+      codex
       uv
       nodejs
       fd
