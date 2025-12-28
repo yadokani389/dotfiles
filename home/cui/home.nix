@@ -12,7 +12,7 @@
       gh
       cava
       tdf
-      mold
+      mold-unwrapped
       jq
       gemini-cli
       codex
