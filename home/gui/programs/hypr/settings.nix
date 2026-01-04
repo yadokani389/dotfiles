@@ -8,15 +8,10 @@
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];
     windowrule = [
-      "noanim, class:^(flameshot)$"
-      "fullscreenstate, class:(flameshot), title:(flameshot)"
-      "float, class:^(flameshot)$"
-      "move 0 0, class:^(flameshot)$"
-      "pin, class:^(flameshot)$"
-      "monitor 0, class:^(flameshot)$"
-      "float, class:^(umegaemochi)$"
-      "float, class:^(umegaemochi-control)$"
-      "float, class:^(Waydroid)$"
+      "match:class flameshot, match:title flameshot, no_anim on, fullscreen_state 2 2, float on, move 0 0, pin on, monitor 0"
+      "match:class umegaemochi, float on"
+      "match:class umegaemochi-control, float on"
+      "match:class Waydroid, float on"
     ];
     input = {
       follow_mouse = 1;

@@ -2,16 +2,15 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     bind = [
-      "$mainMod, G, fullscreen"
+      "$mainMod, F, fullscreen"
       "$mainMod, RETURN, exec, kitty"
       "$mainMod, C, killactive"
       "$mainMod, V, togglefloating"
-      "$mainMod, F, exec, fuzzel"
+      "$mainMod, D, exec, fuzzel"
       "$mainMod, B, exec, pkill -SIGUSR1 waybar"
       "$mainMod, E, togglegroup"
       "$mainMod, R, changegroupactive"
       "$mainMod, T, exec, wlogout"
-      "$mainMod, D, exec, pkill -SIGUSR1 whisper-typing"
 
       '', Print, exec, grim -g "$(slurp)" - | wl-copy''
       "$mainMod, Print, exec, flameshot gui"
