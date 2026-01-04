@@ -17,6 +17,15 @@
     input.kb_layout = "jp";
   };
 
+  programs.niri.settings = {
+    input.keyboard.xkb.layout = "jp";
+    outputs."eDP-1".scale = 0.9;
+    binds = {
+      "Mod+U".action.focus-workspace-down = { };
+      "Mod+I".action.focus-workspace-up = { };
+    };
+  };
+
   programs.home-manager.enable = true;
 
   home = {

@@ -92,6 +92,7 @@
 
   programs = {
     hyprland.enable = true;
+    niri.enable = true;
   };
 
   system.stateVersion = "24.05";

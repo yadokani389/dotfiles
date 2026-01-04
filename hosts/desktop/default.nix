@@ -5,7 +5,7 @@
   services = {
     blueman.enable = true;
 
-    displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "niri";
     xserver.enable = true;
 
     displayManager.gdm = {

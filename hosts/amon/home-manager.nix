@@ -26,6 +26,15 @@
     input.kb_layout = "jp";
   };
 
+  programs.niri.settings = {
+    input.keyboard.xkb.layout = "jp";
+    outputs."HDMI-A-1".transform.rotation = 90;
+    binds = {
+      "Mod+U".action.focus-monitor-previous = { };
+      "Mod+I".action.focus-monitor-next = { };
+    };
+  };
+
   programs.home-manager.enable = true;
 
   home = {

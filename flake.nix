@@ -10,7 +10,7 @@
     nvf = {
       url = "github:yadokani389/nvf-config";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        # nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         git-hooks.follows = "git-hooks";
       };
@@ -41,11 +41,21 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs = {
+        niri-stable.follows = "";
+        niri-unstable.follows = "";
+        nixpkgs-stable.follows = "";
+        nixpkgs.follows = "nixpkgs";
+        xwayland-satellite-stable.follows = "";
+        xwayland-satellite-unstable.follows = "";
+      };
+    };
   };
 
   outputs =
     inputs@{
-      nixpkgs,
       flake-parts,
       ...
     }:

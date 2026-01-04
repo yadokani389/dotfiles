@@ -12,5 +12,6 @@
     ./flameshot.nix
     ./i18n.nix
     ./obs-studio.nix
+    ./niri
   ];
 }
