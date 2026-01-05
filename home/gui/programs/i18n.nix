@@ -5,6 +5,7 @@
     type = "fcitx5";
     fcitx5 = {
       fcitx5-with-addons = pkgs.fhs-fcitx5-with-addons;
+      waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-skk
         fcitx5-hazkey

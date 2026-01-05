@@ -4,7 +4,7 @@
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    inputMethod.fcitx5.waylandFrontend = true;
+    inputMethod.enable = false;
   };
 
   security.rtkit.enable = true;
