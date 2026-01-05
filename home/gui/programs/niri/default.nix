@@ -15,7 +15,11 @@
       warp-mouse-to-focus.enable = true;
     };
     prefer-no-csd = true;
-    spawn-at-startup = [ { command = [ "waybar" ]; } ];
+    spawn-at-startup = [
+      { command = [ "waybar" ]; }
+      { command = [ "swww-daemon" ]; }
+    ];
+    hotkey-overlay.skip-at-startup = true;
     cursor.theme = "Bibata-Modern-Classic";
     cursor.hide-after-inactive-ms = 1000;
     layout.focus-ring = {

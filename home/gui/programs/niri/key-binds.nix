@@ -4,6 +4,11 @@
   "Mod+Return".action.spawn = "kitty";
   "Mod+D".action.spawn = "fuzzel";
   "Mod+T".action.spawn = "wlogout";
+  "Mod+B".action.spawn = [
+    "pkill"
+    "-SIGUSR1"
+    "waybar"
+  ];
 
   "Mod+C".action.close-window = { };
   "Mod+W".action.toggle-column-tabbed-display = { };
