@@ -20,6 +20,7 @@
       nodejs
       fd
       unar
+      evcxr
     ];
 
     sessionVariables = {
