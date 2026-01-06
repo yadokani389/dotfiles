@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  system,
   ...
 }:
 {
@@ -23,5 +22,5 @@
       cachix
       yazi
     ])
-    ++ [ inputs.nvf.packages."${system}".default ];
+    ++ [ inputs.nvf.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 }

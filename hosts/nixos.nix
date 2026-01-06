@@ -1,4 +1,5 @@
-{ pkgs, username, ... }:
+username: hashedPassword: hostname:
+{ pkgs, ... }:
 {
   time.timeZone = "Asia/Tokyo";
 
@@ -24,7 +25,13 @@
       "audio"
       "video"
     ];
-    hashedPassword = "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
+    inherit hashedPassword;
+  };
+
+  networking = {
+    networkmanager.enable = true;
+    hostName = hostname;
+    firewall.enable = true;
   };
 
   hardware = {

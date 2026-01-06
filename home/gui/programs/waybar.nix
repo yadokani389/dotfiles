@@ -1,4 +1,3 @@
-{ lib, hostname, ... }:
 {
   programs.waybar = {
     enable = true;
@@ -166,7 +165,6 @@
           "tooltip" = false;
         };
         "temperature" = {
-          "hwmon-path" = lib.mkIf (hostname == "ipos") "/sys/class/hwmon/hwmon6/temp1_input";
           "format" = " {temperatureC}°C";
         };
         "cava" = {

@@ -19,11 +19,6 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,8 +56,7 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        nixosConfigurations = (import ./hosts inputs).nixosSystems;
-        nixOnDroidConfigurations = (import ./hosts inputs).nixOnDroidSystems;
+        nixosConfigurations = import ./hosts inputs;
         homeConfigurations = import ./home inputs;
       };
 
@@ -103,7 +97,10 @@
             settings = {
               hooks = {
                 ripsecrets.enable = true;
-                typos.enable = true;
+                typos = {
+                  enable = true;
+                  settings.exclude = [ "**/rom-kana/default.json" ];
+                };
                 treefmt.enable = true;
               };
             };

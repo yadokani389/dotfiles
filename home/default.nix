@@ -14,13 +14,7 @@ let
       };
     in
     inputs.home-manager.lib.homeManagerConfiguration {
-      extraSpecialArgs = {
-        inherit
-          inputs
-          system
-          username
-          ;
-      };
+      extraSpecialArgs = { inherit inputs; };
       inherit pkgs;
       modules = [
         {

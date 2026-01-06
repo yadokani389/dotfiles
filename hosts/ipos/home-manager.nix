@@ -1,7 +1,7 @@
+username:
 {
   inputs,
   pkgs,
-  username,
   ...
 }:
 {

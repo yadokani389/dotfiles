@@ -1,4 +1,5 @@
-{ pkgs, username, ... }:
+username:
+{ pkgs, ... }:
 {
   imports = [ ../../home/cui/minimal.nix ];
 

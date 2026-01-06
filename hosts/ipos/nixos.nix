@@ -1,14 +1,29 @@
 {
+  inputs,
   pkgs,
-  hostname,
   config,
   ...
 }:
+let
+  username = "kani";
+  hashedPassword = "$6$xzVNYSD7yHJuO./x$5fCLN3.ENzMJDWkgegYazIgw/NkWYC2jMSiTDqma84wjEhbYRgeDPcHb.nc55WPD3qpACqGakvM4kXHZihgly0";
+  hostname = "ipos";
+in
 {
   imports = [
     ./hardware-configuration.nix
-    ../nixos.nix
+    (import ../nixos.nix username hashedPassword hostname)
     ../desktop
+
+    inputs.home-manager.nixosModules.home-manager
+    {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users."${username}" = import ./home-manager.nix username;
+        extraSpecialArgs = { inherit inputs; };
+      };
+    }
   ];
 
   boot = {
@@ -33,10 +48,7 @@
   };
 
   networking = {
-    networkmanager.enable = true;
-    hostName = hostname;
     firewall = {
-      enable = true;
       allowedTCPPorts = [
         5900 # wayvnc
       ];

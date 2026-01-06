@@ -1,4 +1,3 @@
-{ username, ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -11,8 +10,7 @@
 
       background = [
         {
-          path = "/home/${username}/wallpapers/blender.png";
-          blur_passes = 1;
+          path = "~/wallpapers/blender.png";
         }
       ];
 
