@@ -34,4 +34,8 @@ in
       ./vine/nixos.nix
     ];
   };
+  caim = mkNixosSystem {
+    system = "x86_64-linux";
+    modules = [ ./caim/nixos.nix ];
+  };
 }
