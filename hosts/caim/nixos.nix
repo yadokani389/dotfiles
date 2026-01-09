@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  config,
   ...
 }:
 let
@@ -10,8 +9,6 @@ let
   server-username = "procon-server";
   server-hashedPassword = "$6$8hFdyawkKpPjCu0T$CH1UjkJ6bqujsXVRNY0HxNeUPZFsE2v8CdzkQXnOVLfC3tQF1T6sMzU0Hg/aPgp9BUgPkUAxKM77.1PHZqG6b/";
   hostname = "caim";
-
-  server-uid = config.users.users."${server-username}".uid;
 in
 {
   imports = [
@@ -35,6 +32,7 @@ in
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "joydev" ];
     tmp.useTmpfs = true;
+    kernel.sysctl."net.ipv4.ip_forward" = 1;
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -64,25 +62,10 @@ in
 
   nix.settings.trusted-users = [ "${server-username}" ];
 
-  # networking.nftables.enable = true;
-  # networking.nftables.ruleset = ''
-  # table inet filter {
-  #    chain output {
-  #       type filter hook output priority 0;
-  #
-  #    meta skuid ${server-uid} oifname != "tailscale0" \
-  #       ip daddr 100.64.0.0/10 reject
-  #    }
-  #   }
-  #  '';
-
   console.keyMap = "jp106";
 
   services = {
-    tailscale = {
-      enable = true;
-      useRoutingFeatures = "client";
-    };
+    tailscale.enable = true;
     thermald.enable = true;
 
     desktopManager.gnome.enable = true;
