@@ -13,6 +13,7 @@
     input = {
       focus-follows-mouse.enable = true;
       warp-mouse-to-focus.enable = true;
+      touchpad.dwt = true;
     };
     prefer-no-csd = true;
     spawn-at-startup = [
