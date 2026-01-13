@@ -57,6 +57,13 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
   systemd.user.services.wallpaper-changer = {
     Unit.Description = "change wallpaper random";
     Service = {
