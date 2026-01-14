@@ -45,6 +45,10 @@ in
     };
   };
 
+  networking.firewall.allowedTCPPorts = [
+    25565 # minecraft
+  ];
+
   users.users.root = {
     hashedPassword = my-hashedPassword;
   };
