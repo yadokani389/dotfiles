@@ -20,7 +20,6 @@
       typst
       any-nix-shell
       cachix
-      yazi
     ])
     ++ [ inputs.nvf.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 }
