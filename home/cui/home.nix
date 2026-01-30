@@ -21,6 +21,7 @@
       fd
       unar
       evcxr
+      cloudflared
     ];
 
     sessionVariables = {
