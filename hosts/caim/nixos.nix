@@ -73,6 +73,12 @@ in
     thermald.enable = true;
 
     desktopManager.gnome.enable = true;
+
+    rustdesk-server = {
+      enable = true;
+      openFirewall = true;
+      signal.relayHosts = [ "100.120.100.93" ];
+    };
   };
 
   hardware.graphics = {
