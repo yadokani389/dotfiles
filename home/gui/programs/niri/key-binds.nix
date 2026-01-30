@@ -26,8 +26,8 @@
   "Mod+Up".action.focus-window-or-monitor-up = { };
   "Mod+Right".action.focus-column-or-monitor-right = { };
   "Mod+H".action.focus-column-or-monitor-left = { };
-  "Mod+J".action.focus-window-or-monitor-down = { };
-  "Mod+K".action.focus-window-or-monitor-up = { };
+  "Mod+J".action.focus-window-or-workspace-down = { };
+  "Mod+K".action.focus-window-or-workspace-up = { };
   "Mod+L".action.focus-column-or-monitor-right = { };
 
   "Mod+Shift+Left".action.move-column-left-or-to-monitor-left = { };
