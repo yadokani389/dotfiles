@@ -6,6 +6,10 @@
 {
   imports = [ inputs.niri-flake.homeModules.niri ];
 
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
+
   programs.niri.package = pkgs.niri;
 
   programs.niri.settings = {
