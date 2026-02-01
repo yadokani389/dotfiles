@@ -26,7 +26,6 @@
     wayvnc
     grim
     slurp
-    xwayland-run
     gdlauncher-carbon
   ];
 
