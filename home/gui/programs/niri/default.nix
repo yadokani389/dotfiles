@@ -27,13 +27,16 @@
     hotkey-overlay.skip-at-startup = true;
     cursor.theme = "Bibata-Modern-Classic";
     cursor.hide-after-inactive-ms = 1000;
-    layout.focus-ring = {
-      active.gradient = {
-        angle = 45;
-        from = "#08f";
-        to = "#0f8";
-        in' = "oklab";
-        relative-to = "workspace-view";
+    layout = {
+      default-column-width.proportion = 0.5;
+      focus-ring = {
+        active.gradient = {
+          angle = 45;
+          from = "#08f";
+          to = "#0f8";
+          in' = "oklab";
+          relative-to = "workspace-view";
+        };
       };
     };
     window-rules = [
