@@ -14,7 +14,7 @@
         }
       ];
 
-      open.rules = [
+      open.append_rules = [
         {
           mime = "application/pdf";
           use = "pdf";
