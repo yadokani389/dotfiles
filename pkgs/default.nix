@@ -10,4 +10,5 @@ in
   hazkey-zenzai = require ./hazkey-zenzai { };
   fhs-fcitx5-with-addons = require ./fhs-fcitx5-with-addons { };
   audiorelay = require ./audiorelay { };
+  karukan-im = require ./karukan-im { };
 }
