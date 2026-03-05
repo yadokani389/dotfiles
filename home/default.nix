@@ -10,7 +10,9 @@ let
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ (import ../pkgs/default.nix) ];
+        overlays = [
+          inputs.nur-yadokani.overlays.nur
+        ];
       };
     in
     inputs.home-manager.lib.homeManagerConfiguration {

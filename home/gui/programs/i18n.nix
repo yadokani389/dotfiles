@@ -4,7 +4,19 @@
     enable = true;
     type = "fcitx5";
     fcitx5 = {
-      fcitx5-with-addons = pkgs.fhs-fcitx5-with-addons;
+      fcitx5-with-addons = pkgs.callPackage (
+        {
+          buildFHSEnv,
+          addons ? [ ],
+        }:
+        buildFHSEnv {
+          name = "fcitx5";
+          targetPkgs = pkgs: [
+            (pkgs.qt6Packages.fcitx5-with-addons.override { inherit addons; })
+          ];
+          runScript = "fcitx5";
+        }
+      ) { };
       waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-skk

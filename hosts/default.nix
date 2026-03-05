@@ -12,7 +12,7 @@ let
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (import ../pkgs/default.nix)
+          inputs.nur-yadokani.overlays.nur
         ];
       };
       inherit modules;
