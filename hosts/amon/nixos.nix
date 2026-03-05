@@ -63,10 +63,6 @@ in
           from = 33110;
           to = 33120;
         }
-        {
-          from = 59100;
-          to = 59100;
-        } # AudioRelay
       ];
       allowedUDPPortRanges = [
         {

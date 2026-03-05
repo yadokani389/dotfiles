@@ -22,7 +22,6 @@
     kooha
     dragon-drop
     rquickshare
-    audiorelay
     wayvnc
     grim
     slurp
