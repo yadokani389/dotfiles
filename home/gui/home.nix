@@ -26,6 +26,7 @@
     grim
     slurp
     gdlauncher-carbon
+    sptlrx-ex
   ];
 
   services = {
