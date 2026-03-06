@@ -27,6 +27,7 @@
     slurp
     gdlauncher-carbon
     sptlrx-ex
+    discord
   ];
 
   services = {
