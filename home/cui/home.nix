@@ -22,6 +22,7 @@
       evcxr
       cloudflared
       ffmpeg
+      python3
     ];
 
     sessionVariables = {
