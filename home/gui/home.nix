@@ -28,6 +28,7 @@
     gdlauncher-carbon
     sptlrx-ex
     discord
+    earbuds
   ];
 
   services = {
