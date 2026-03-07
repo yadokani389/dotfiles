@@ -21,6 +21,7 @@
       unar
       evcxr
       cloudflared
+      ffmpeg
     ];
 
     sessionVariables = {
