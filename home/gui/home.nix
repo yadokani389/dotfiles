@@ -29,6 +29,7 @@
     sptlrx-ex
     discord
     earbuds
+    blender
   ];
 
   services = {
