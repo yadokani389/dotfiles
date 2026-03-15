@@ -30,6 +30,7 @@
     discord
     earbuds
     blender
+    wf-recorder
   ];
 
   services = {
