@@ -6,7 +6,6 @@
     ./waybar.nix
     ./hyprlock.nix
     ./wlogout.nix
-    ./libskk
     ./kitty.nix
     ./zen-browser.nix
     ./flameshot.nix

@@ -19,7 +19,6 @@
       ) { };
       waylandFrontend = true;
       addons = with pkgs; [
-        fcitx5-skk
         fcitx5-hazkey
         karukan-im
       ];
