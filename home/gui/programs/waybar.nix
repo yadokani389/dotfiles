@@ -122,6 +122,12 @@
         color: rgb(242, 143, 173);
         padding-right: 8px;
       }
+      #custom-wf-recorder {
+        color: rgb(255, 100, 100);
+        font-size: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
       #tray {
         padding-right: 8px;
         padding-left: 10px;
@@ -161,6 +167,7 @@
           "cpu"
           "network"
           "custom/powermenu"
+          "custom/wf-recorder"
           "tray"
         ];
         "custom/launcher" = {
@@ -258,6 +265,10 @@
           "format" = "";
           "on-click" = "wlogout";
           "tooltip" = false;
+        };
+        "custom/wf-recorder" = {
+          "exec" = "test -e \"$XDG_RUNTIME_DIR/wf-recorder.pid\" && printf '●'";
+          "interval" = 1;
         };
         "tray" = {
           "icon-size" = 15;

@@ -103,6 +103,9 @@
   "Alt+Print".action.screenshot-window = {
     write-to-disk = false;
   };
+  "Mod+S".action.spawn-sh = [
+    "wf-recorder-toggle -f \"$HOME/Videos/wf-recorder/$(date +%F-%H-%M-%S).mp4\""
+  ];
 
   "XF86AudioRaiseVolume" = {
     allow-when-locked = true;

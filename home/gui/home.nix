@@ -31,6 +31,7 @@
     earbuds
     blender
     wf-recorder
+    wf-recorder-toggle
   ];
 
   services = {
