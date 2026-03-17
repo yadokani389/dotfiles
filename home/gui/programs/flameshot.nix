@@ -5,6 +5,10 @@
     package = pkgs.flameshot.override {
       enableWlrSupport = true;
     };
-    settings.General.useGrimAdapter = true;
+    settings.General = {
+      useGrimAdapter = true;
+      showDesktopNotification = false;
+      showHelp = false;
+    };
   };
 }
