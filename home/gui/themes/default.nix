@@ -8,7 +8,7 @@
     };
 
     theme = {
-      name = "Tokyonight-Dark-B-LB";
+      name = "Tokyonight-Dark";
       package = pkgs.tokyonight-gtk-theme;
     };
 

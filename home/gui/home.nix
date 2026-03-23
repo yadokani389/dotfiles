@@ -48,7 +48,7 @@
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark-B-LB";
+      name = "Tokyonight-Dark";
     };
   };
 
