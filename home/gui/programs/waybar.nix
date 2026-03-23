@@ -263,7 +263,7 @@
         };
         "custom/powermenu" = {
           "format" = "";
-          "on-click" = "wlogout";
+          "on-click" = "wleave";
           "tooltip" = false;
         };
         "custom/wf-recorder" = {

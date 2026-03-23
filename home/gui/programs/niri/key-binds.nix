@@ -3,7 +3,7 @@
 
   "Mod+Return".action.spawn = "kitty";
   "Mod+D".action.spawn = "fuzzel";
-  "Mod+T".action.spawn = "wlogout";
+  "Mod+T".action.spawn = "wleave";
   "Mod+B".action.spawn = [
     "pkill"
     "-SIGUSR1"
