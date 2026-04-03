@@ -3,7 +3,7 @@
     exec-once = [
       "hyprctl setcursor Bibata-Modern-Classic 24"
       "dunst"
-      "swww-daemon & sleep 1 && wallpaper_random"
+      "awww-daemon & sleep 1 && wallpaper_random"
     ];
     exec = [ "pkill waybar & sleep 0.5 && waybar" ];
     source = [ "/home/kani/.config/hypr/colors" ];

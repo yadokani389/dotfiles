@@ -12,6 +12,11 @@
       package = pkgs.tokyonight-gtk-theme;
     };
 
+    gtk4.theme = {
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
+    };
+
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
