@@ -29,7 +29,7 @@ username:
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
 
     packages = with pkgs; [
       nvtopPackages.intel
