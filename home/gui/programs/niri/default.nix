@@ -7,6 +7,7 @@
   imports = [ inputs.niri-flake.homeModules.niri ];
 
   home.packages = with pkgs; [
+    awww
     xwayland-satellite
   ];
 

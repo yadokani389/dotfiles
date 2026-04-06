@@ -12,10 +12,6 @@ username:
     ../../home/cui/minimal.nix
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    input.kb_layout = "jp";
-  };
-
   programs.niri.settings = {
     input.keyboard.xkb.layout = "jp";
     binds = {

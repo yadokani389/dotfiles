@@ -7,7 +7,6 @@
   ];
 
   home.packages = with pkgs; [
-    wlr-randr
     dunst
     pavucontrol
     xdg-utils
@@ -19,11 +18,7 @@
     nautilus
     gimp
     wallpaper_random
-    kooha
     dragon-drop
-    rquickshare
-    wayvnc
-    grim
     slurp
     gdlauncher-carbon
     sptlrx-ex

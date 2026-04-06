@@ -94,7 +94,6 @@ in
   };
 
   programs = {
-    hyprland.enable = true;
     niri.enable = true;
     steam = {
       enable = true;

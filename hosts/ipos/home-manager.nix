@@ -12,11 +12,6 @@ username:
     ../../home/cui/minimal.nix
   ];
 
-  wayland.windowManager.hyprland.settings = {
-    monitor = [ "eDP-1,1920x1200@60,0x0,1" ];
-    input.kb_layout = "jp";
-  };
-
   programs.niri.settings = {
     input.keyboard.xkb.layout = "jp";
     outputs."eDP-1".scale = 0.9;
