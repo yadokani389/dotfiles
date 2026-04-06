@@ -13,7 +13,6 @@
       ])
       ++ (with pkgs.nerd-fonts; [
         fira-code
-        jetbrains-mono
         noto
       ]);
     fontconfig = {
@@ -28,7 +27,7 @@
         ];
         monospace = [
           "FiraCode Nerd Font"
-          "JetBrainsMono Nerd Font Mono"
+          "Noto Sans CJK JP"
           "Noto Emoji"
         ];
         emoji = [ "Noto Emoji" ];
