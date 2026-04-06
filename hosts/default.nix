@@ -32,13 +32,6 @@ in
     system = "x86_64-linux";
     modules = [ ./ipos/nixos.nix ];
   };
-  vine = mkNixosSystem {
-    system = "x86_64-linux";
-    modules = [
-      inputs.nixos-wsl.nixosModules.wsl
-      ./vine/nixos.nix
-    ];
-  };
   caim = mkNixosSystem {
     system = "x86_64-linux";
     modules = [ ./caim/nixos.nix ];
