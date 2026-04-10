@@ -84,6 +84,11 @@ in
     };
     thermald.enable = true;
     logind.settings.Login.HandleLidSwitch = "ignore";
+    fprintd = {
+      enable = true;
+      tod.enable = true;
+      tod.driver = pkgs.libfprint-2-tod1-goodix;
+    };
 
     desktopManager.gnome.enable = true;
   };
