@@ -20,7 +20,7 @@ let
       inherit pkgs;
       modules = [
         {
-          imports = modules;
+          imports = modules ++ [ inputs.zen-browser.homeModules.beta ];
           nix.package = pkgs.nix;
           home = {
             inherit username;
