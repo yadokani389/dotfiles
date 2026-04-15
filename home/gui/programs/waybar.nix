@@ -249,7 +249,10 @@
         };
         "custom/media" = {
           "max-length" = 100;
-          "exec" = "playerctl metadata title";
+          "exec" = ''
+            playerctl -l | while read -r p; do [ "$(playerctl -p "$p" status 2>/dev/null)" = Playing ] && playerctl -p "$p" metadata title && break; done
+          '';
+          "on-click" = "playerctl play-pause";
           "tooltip" = false;
           "interval" = 10;
         };
