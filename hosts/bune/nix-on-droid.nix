@@ -21,6 +21,8 @@
 
   user.shell = "${pkgs.zsh}/bin/zsh";
 
+  terminal.font = "${pkgs.nerd-fonts.fira-code}/share/fonts/truetype/NerdFonts/FiraCode/FiraCodeNerdFontMono-Regular.ttf";
+
   home-manager = {
     config = ./home-manager.nix;
     backupFileExtension = "bak";
