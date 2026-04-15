@@ -23,6 +23,7 @@
       cloudflared
       ffmpeg
       python3
+      arrpc
     ];
 
     sessionVariables = {
