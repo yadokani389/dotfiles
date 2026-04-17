@@ -252,7 +252,9 @@
           "exec" = ''
             playerctl -l | while read -r p; do [ "$(playerctl -p "$p" status 2>/dev/null)" = Playing ] && playerctl -p "$p" metadata title && break; done
           '';
-          "on-click" = "playerctl play-pause";
+          "on-click" = ''
+            playerctl -l | while read -r p; do [ "$(playerctl -p "$p" status 2>/dev/null)" = Playing ] && playerctl -p "$p" play-pause && break; done
+          '';
           "tooltip" = false;
           "interval" = 10;
         };
