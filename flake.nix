@@ -106,7 +106,10 @@
             settings = {
               hooks = {
                 ripsecrets.enable = true;
-                typos.enable = true;
+                typos = {
+                  enable = true;
+                  settings.exclude = [ "**/rom-kana/default.json" ];
+                };
                 treefmt.enable = true;
               };
             };

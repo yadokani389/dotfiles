@@ -6,6 +6,7 @@
     fcitx5 = {
       waylandFrontend = true;
       addons = with pkgs; [
+        fcitx5-skk
         karukan-im
       ];
     };

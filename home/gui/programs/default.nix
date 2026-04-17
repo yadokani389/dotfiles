@@ -5,6 +5,7 @@
     ./waybar.nix
     ./hyprlock.nix
     ./wleave.nix
+    ./libskk
     ./kitty.nix
     ./zen-browser.nix
     ./flameshot.nix
