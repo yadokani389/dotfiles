@@ -36,7 +36,6 @@ in
     tmp.useTmpfs = true;
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = 1;
       grub = {
         enable = true;
         device = "nodev";
