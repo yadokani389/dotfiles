@@ -48,6 +48,7 @@ in
   };
 
   networking = {
+    nftables.enable = true;
     firewall = {
       allowedTCPPortRanges = [
         {
