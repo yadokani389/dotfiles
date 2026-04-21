@@ -24,6 +24,8 @@
       ffmpeg
       python3
       arrpc
+      imagemagick
+      ghostscript
     ];
 
     sessionVariables = {
