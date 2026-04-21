@@ -48,6 +48,7 @@ in
   };
 
   networking = {
+    nftables.enable = true;
     firewall = {
       allowedTCPPorts = [
         5900 # wayvnc
@@ -106,6 +107,8 @@ in
   programs = {
     niri.enable = true;
   };
+
+  virtualisation.waydroid.enable = true;
 
   system.stateVersion = "26.05";
 }
