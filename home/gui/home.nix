@@ -20,7 +20,7 @@
     wallpaper_random
     dragon-drop
     slurp
-    gdlauncher-carbon
+    prismlauncher
     sptlrx-ex
     discord
     earbuds
