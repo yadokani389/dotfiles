@@ -12,16 +12,23 @@ username:
     ../../home/cui/minimal.nix
   ];
 
-  programs.niri.settings = {
-    input.keyboard.xkb.layout = "jp";
-    outputs."eDP-1".scale = 0.9;
-    binds = {
-      "Mod+U".action.focus-workspace-down = { };
-      "Mod+I".action.focus-workspace-up = { };
+  programs = {
+    home-manager.enable = true;
+
+    niri.settings = {
+      input.keyboard.xkb.layout = "jp";
+      outputs."eDP-1".scale = 0.9;
+      binds = {
+        "Mod+U".action.focus-workspace-down = { };
+        "Mod+I".action.focus-workspace-up = { };
+      };
+    };
+
+    git.settings.user = {
+      name = "yadokani389";
+      email = "yadokani389@gmail.com";
     };
   };
-
-  programs.home-manager.enable = true;
 
   home = {
     inherit username;

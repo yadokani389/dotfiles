@@ -12,16 +12,23 @@ username:
     ../../home/cui/minimal.nix
   ];
 
-  programs.niri.settings = {
-    input.keyboard.xkb.layout = "jp";
-    outputs."HDMI-A-1".transform.rotation = 90;
-    binds = {
-      "Mod+U".action.focus-monitor-previous = { };
-      "Mod+I".action.focus-monitor-next = { };
+  programs = {
+    home-manager.enable = true;
+
+    niri.settings = {
+      input.keyboard.xkb.layout = "jp";
+      outputs."HDMI-A-1".transform.rotation = 90;
+      binds = {
+        "Mod+U".action.focus-monitor-previous = { };
+        "Mod+I".action.focus-monitor-next = { };
+      };
+    };
+
+    git.settings.user = {
+      name = "yadokani389";
+      email = "yadokani389@gmail.com";
     };
   };
-
-  programs.home-manager.enable = true;
 
   home = {
     inherit username;
