@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-
   imports = [
-    ./programs
+    ./minimal.nix
+    ./programs/full.nix
     ./themes
   ];
 
@@ -27,9 +27,5 @@
       imagemagick
       ghostscript
     ];
-
-    sessionVariables = {
-      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-    };
   };
 }
