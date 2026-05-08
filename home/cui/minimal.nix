@@ -12,16 +12,12 @@
       bat
       git
       lazygit
-      jujutsu
-      lazyjj
       unzip
       wget
       eza
       zoxide
       ripgrep
-      typst
       any-nix-shell
-      cachix
     ])
     ++ [ inputs.nvf.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 }

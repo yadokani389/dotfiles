@@ -13,8 +13,6 @@
       tdf
       mold-unwrapped
       jq
-      gemini-cli
-      codex
       uv
       nodejs
       fd
@@ -26,6 +24,7 @@
       arrpc
       imagemagick
       ghostscript
+      cachix
     ];
   };
 }

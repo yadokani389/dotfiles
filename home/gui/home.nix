@@ -15,7 +15,6 @@
     brightnessctl
     wl-clipboard
     nautilus
-    gimp
     dragon-drop
     slurp
     prismlauncher
