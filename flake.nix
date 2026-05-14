@@ -60,6 +60,14 @@
       url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xremap-flake = {
+      url = "github:xremap/nix-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        xremap.follows = "";
+      };
+    };
   };
 
   outputs =
