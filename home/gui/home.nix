@@ -19,7 +19,6 @@
     slurp
     prismlauncher
     sptlrx-ex
-    discord
     earbuds
     blender
     wf-recorder
