@@ -21,7 +21,7 @@
       cloudflared
       ffmpeg
       python3
-      arrpc
+      rsrpc
       imagemagick
       ghostscript
       cachix
