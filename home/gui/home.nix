@@ -9,7 +9,6 @@
     dunst
     pavucontrol
     xdg-utils
-    tokyonight-gtk-theme
     playerctl
     pamixer
     brightnessctl
@@ -36,10 +35,6 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-    };
-
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Tokyonight-Dark";
     };
   };
 
