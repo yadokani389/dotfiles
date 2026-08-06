@@ -77,6 +77,10 @@ in
 
   services = {
     tailscale.enable = true;
+    xserver.xkb = {
+      layout = "jp";
+      model = "jp106";
+    };
     xserver.videoDrivers = [ "nvidia" ];
     desktopManager.gnome.enable = true;
   };
