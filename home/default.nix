@@ -37,22 +37,50 @@ in
     system = "x86_64-linux";
     username = "kani";
     modules = [
-      ./cui/minimal.nix
+      ./shell
+      ./terminal
+      ./development
     ];
   };
   home-cli-full = mkHome {
     system = "x86_64-linux";
     username = "kani";
     modules = [
-      ./cui/full.nix
+      ./shell
+      ./terminal
+      ./development
+      ./development/nix-index.nix
+      (
+        { pkgs, ... }:
+        {
+          home.packages = with pkgs; [
+            cachix
+            cava
+            cloudflared
+            evcxr
+            ffmpeg
+            fd
+            gh
+            ghostscript
+            imagemagick
+            jq
+            mold-unwrapped
+            nodejs
+            python3
+            rsrpc
+            tdf
+            unar
+            uv
+          ];
+        }
+      )
     ];
   };
   home-gui = mkHome {
     system = "x86_64-linux";
     username = "kani";
     modules = [
-      ./cui/full.nix
-      ./gui/home.nix
+      ./profiles/workstation.nix
     ];
   };
 }

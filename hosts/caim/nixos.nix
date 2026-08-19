@@ -13,8 +13,9 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    (import ../nixos.nix my-username my-hashedPassword hostname)
-    ../desktop
+    (import ../modules/base.nix my-username my-hashedPassword hostname)
+    ../modules/container.nix
+    ../modules/desktop
 
     inputs.home-manager.nixosModules.home-manager
     {

@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
-  imports = [ ../../home/cui/minimal.nix ];
+  imports = [
+    ../../home/shell
+    ../../home/terminal
+    ../../home/development
+  ];
 
   nix.package = pkgs.nix;
 
