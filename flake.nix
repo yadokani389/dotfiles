@@ -64,6 +64,7 @@
         xremap.follows = "";
       };
     };
+    skkzenz.url = "github:ibuki2003/skk_zenz";
   };
 
   outputs =
