@@ -2,7 +2,6 @@
 {
   imports = [
     ./dunst.nix
-    ./flameshot.nix
     ./fuzzel.nix
     ./hyprlock.nix
     ./i18n.nix
@@ -19,7 +18,6 @@
   ];
 
   home.packages = with pkgs; [
-    dunst
     pavucontrol
     xdg-utils
     playerctl
@@ -32,7 +30,6 @@
     prismlauncher
     sptlrx-ex
     earbuds
-    blender
     wf-recorder
     wf-recorder-toggle
   ];

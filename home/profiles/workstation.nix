@@ -11,9 +11,7 @@
 
   home.packages = with pkgs; [
     cachix
-    cava
     cloudflared
-    evcxr
     ffmpeg
     fd
     gh
