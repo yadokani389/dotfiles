@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./clipse.nix
     ./dunst.nix
     ./fuzzel.nix
     ./hyprlock.nix
