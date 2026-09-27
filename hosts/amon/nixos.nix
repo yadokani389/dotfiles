@@ -95,6 +95,7 @@ in
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.production;
     };
+    nvidia-container-toolkit.enable = true;
   };
 
   programs = {
