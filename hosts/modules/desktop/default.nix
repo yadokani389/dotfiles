@@ -33,10 +33,6 @@
     uinput.enable = true;
   };
 
-  services.udev.extraRules = ''
-    KERNEL=="uinput", GROUP="input", TAG+="uaccess"
-  '';
-
   programs.dconf.enable = true;
 
   environment.gnome.excludePackages = with pkgs; [

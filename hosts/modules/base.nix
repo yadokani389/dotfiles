@@ -24,6 +24,7 @@ username: hashedPassword: hostname:
       "audio"
       "video"
       "input"
+      "uinput"
     ];
     inherit hashedPassword;
   };
