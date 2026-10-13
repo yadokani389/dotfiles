@@ -1,27 +1,40 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
     fcitx5 = {
       waylandFrontend = true;
-      addons = with pkgs; [
-        fcitx5-skk
+      addons = [
+        inputs.kanaemi.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
-      settings.inputMethod = {
-        GroupOrder."0" = "Default";
-        "Groups/0" = {
-          Name = "Default";
-          "Default Layout" = "jp";
-          DefaultIM = "skk";
+      settings = {
+        globalOptions = {
+          Hotkey = {
+            TriggerKeys = "";
+            ActivateKeys = "";
+            DeactivateKeys = "";
+            AltTriggerKeys = "";
+            EnumerateGroupForwardKeys = "";
+            EnumerateGroupBackwardKeys = "";
+          };
+          Behavior.ActiveByDefault = true;
         };
-        "Groups/0/Items/0" = {
-          Name = "keyboard-jp";
-          Layout = null;
-        };
-        "Groups/0/Items/1" = {
-          Name = "skk";
-          Layout = null;
+        inputMethod = {
+          GroupOrder."0" = "Default";
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "jp";
+            DefaultIM = "kanaemi";
+          };
+          "Groups/0/Items/0" = {
+            Name = "keyboard-jp";
+            Layout = null;
+          };
+          "Groups/0/Items/1" = {
+            Name = "kanaemi";
+            Layout = null;
+          };
         };
       };
     };
@@ -30,5 +43,26 @@
   xdg.configFile.fcitx5 = {
     recursive = true;
     force = true;
+  };
+
+  xdg.configFile = {
+    "kanaemi/config.toml".text = ''
+      [romaji]
+      tables = ["full-width", "hepburn", "kunrei", "input-aids", "z-symbols", "azik", "azik-custom.tsv"]
+    '';
+    "kanaemi/romaji/azik-custom.tsv".text = ''
+      l	っ
+    '';
+    "kanaemi/dictionaries/kanaemi-base.tsv".source = "${inputs.kanaemi-dict}/dictionaries/base.tsv";
+    "kanaemi/dictionaries/kanaemi-base.tsv.sources.txt".source =
+      "${inputs.kanaemi-dict}/dictionaries/base.tsv.sources.txt";
+    "kanaemi/dictionaries/kanaemi-base.model.sources.txt".source =
+      "${inputs.kanaemi-dict}/dictionaries/base.model.sources.txt";
+    "kanaemi/dictionaries/LICENSE".source = "${inputs.kanaemi-dict}/dictionaries/LICENSE";
+    "kanaemi/dictionaries/notices" = {
+      source = "${inputs.kanaemi-dict}/notices";
+      recursive = true;
+    };
+    "kanaemi/ranking.model".source = "${inputs.kanaemi-dict}/dictionaries/base.model";
   };
 }
