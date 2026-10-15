@@ -7,7 +7,6 @@
     ./hyprlock.nix
     ./i18n.nix
     ./kitty.nix
-    ./libskk
     ./niri
     ./obs-studio.nix
     ./theme.nix
