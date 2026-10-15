@@ -48,10 +48,22 @@
   xdg.configFile = {
     "kanaemi/config.toml".text = ''
       [romaji]
-      tables = ["full-width", "hepburn", "kunrei", "input-aids", "z-symbols", "azik", "azik-custom.tsv"]
+      tables = ["full-width", "hepburn", "kunrei", "input-aids", "z-symbols", "azik", "azik-custom.tsv", "half-width-digits.tsv"]
     '';
     "kanaemi/romaji/azik-custom.tsv".text = ''
       l	っ
+    '';
+    "kanaemi/romaji/half-width-digits.tsv".text = ''
+      0	0
+      1	1
+      2	2
+      3	3
+      4	4
+      5	5
+      6	6
+      7	7
+      8	8
+      9	9
     '';
     "kanaemi/dictionaries/kanaemi-base.tsv".source = "${inputs.kanaemi-dict}/dictionaries/base.tsv";
     "kanaemi/dictionaries/kanaemi-base.tsv.sources.txt".source =
