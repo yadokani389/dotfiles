@@ -49,6 +49,22 @@
     "kanaemi/config.toml".text = ''
       [romaji]
       tables = ["full-width", "hepburn", "kunrei", "input-aids", "z-symbols", "azik", "azik-custom.tsv", "half-width-digits.tsv"]
+
+      [keys]
+      pass_while_composing = ["ctrl"]
+
+      [keys.reading]
+      "ctrl+a" = "@none"
+      "ctrl+k" = "@commit-katakana"
+
+      [keys.candidates]
+      "ctrl+k" = "@commit-katakana"
+
+      [keys.registration]
+      "ctrl+a" = "@none"
+
+      [keys.application.linux]
+      "ctrl+a" = "@none"
     '';
     "kanaemi/romaji/azik-custom.tsv".text = ''
       l	っ
@@ -66,15 +82,13 @@
       9	9
     '';
     "kanaemi/dictionaries/kanaemi-base.tsv".source = "${inputs.kanaemi-dict}/dictionaries/base.tsv";
-    "kanaemi/dictionaries/kanaemi-base.tsv.sources.txt".source =
-      "${inputs.kanaemi-dict}/dictionaries/base.tsv.sources.txt";
-    "kanaemi/dictionaries/kanaemi-base.model.sources.txt".source =
-      "${inputs.kanaemi-dict}/dictionaries/base.model.sources.txt";
-    "kanaemi/dictionaries/LICENSE".source = "${inputs.kanaemi-dict}/dictionaries/LICENSE";
-    "kanaemi/dictionaries/notices" = {
-      source = "${inputs.kanaemi-dict}/notices";
-      recursive = true;
-    };
+    "kanaemi/dictionaries/kanaemi-2026.tsv".source = "${inputs.kanaemi-dict}/dictionaries/2026.tsv";
+    "kanaemi/dictionaries/kanaemi-games.tsv".source = "${inputs.kanaemi-dict}/dictionaries/games.tsv";
+    "kanaemi/dictionaries/kanaemi-it.tsv".source = "${inputs.kanaemi-dict}/dictionaries/it.tsv";
+    "kanaemi/dictionaries/kanaemi-place.tsv".source = "${inputs.kanaemi-dict}/dictionaries/place.tsv";
+    "kanaemi/dictionaries/kanaemi-science.tsv".source =
+      "${inputs.kanaemi-dict}/dictionaries/science.tsv";
+    "kanaemi/dictionaries/kanaemi-symbol.tsv".source = "${inputs.kanaemi-dict}/dictionaries/symbol.tsv";
     "kanaemi/ranking.model".source = "${inputs.kanaemi-dict}/dictionaries/base.model";
   };
 }
