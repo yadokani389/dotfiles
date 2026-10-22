@@ -1,12 +1,8 @@
 { pkgs, ... }:
 {
-  # Keep shared workstation wiring in one profile so host definitions stay hardware-focused.
   imports = [
-    ../shell
-    ../terminal
-    ../development
+    ./minimal.nix
     ../development/nix-index.nix
-    ../desktop
   ];
 
   home.packages = with pkgs; [

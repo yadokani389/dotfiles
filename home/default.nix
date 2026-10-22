@@ -36,50 +36,27 @@ in
   home-cli-minimal = mkHome {
     system = "x86_64-linux";
     username = "kani";
-    modules = [
-      ./shell
-      ./terminal
-      ./development
-    ];
+    modules = [ ./terminal/minimal.nix ];
   };
   home-cli-full = mkHome {
     system = "x86_64-linux";
     username = "kani";
     modules = [
-      ./shell
-      ./terminal
-      ./development
-      ./development/nix-index.nix
+      ./terminal/full.nix
       (
         { pkgs, ... }:
         {
-          home.packages = with pkgs; [
-            cachix
-            cloudflared
-            evcxr
-            ffmpeg
-            fd
-            gh
-            ghostscript
-            imagemagick
-            jq
-            mold-unwrapped
-            nodejs
-            python3
-            rsrpc
-            tdf
-            unar
-            uv
-          ];
+          home.packages = [ pkgs.evcxr ];
         }
       )
     ];
   };
-  home-gui = mkHome {
+  home-desktop = mkHome {
     system = "x86_64-linux";
     username = "kani";
     modules = [
-      ./profiles/workstation.nix
+      ./terminal/full.nix
+      ./desktop
     ];
   };
 }

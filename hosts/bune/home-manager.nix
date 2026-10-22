@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../home/shell
-    ../../home/terminal
-    ../../home/development
+    ../../home/terminal/minimal.nix
   ];
 
   nix.package = pkgs.nix;

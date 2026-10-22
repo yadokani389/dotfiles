@@ -5,7 +5,7 @@
     ./dunst.nix
     ./fuzzel.nix
     ./hyprlock.nix
-    ./i18n.nix
+    ./input-method.nix
     ./kitty.nix
     ./niri
     ./obs-studio.nix
