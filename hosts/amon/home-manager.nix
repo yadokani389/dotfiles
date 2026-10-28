@@ -35,6 +35,7 @@ username:
     packages = with pkgs; [
       nvtopPackages.nvidia
       btop-cuda
+      sptlrx-ex
     ];
 
     sessionVariables = {

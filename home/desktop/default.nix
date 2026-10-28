@@ -28,7 +28,6 @@
     ripdrag
     slurp
     prismlauncher
-    sptlrx-ex
     earbuds
     wf-recorder
     wf-recorder-toggle
