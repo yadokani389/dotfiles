@@ -47,6 +47,21 @@
 
   xdg.configFile = {
     "kanaemi/config.toml".text = ''
+      dictionaries = [
+        "custom",
+        "kanaemi-base.tsv",
+        "kanaemi-2026.tsv",
+        "kanaemi-games.tsv",
+        "kanaemi-it.tsv",
+        "kanaemi-place.tsv",
+        "kanaemi-science.tsv",
+        "kanaemi-symbol.tsv",
+        "builtin:date",
+        "builtin:time",
+        "builtin:year",
+        "builtin:random",
+      ]
+
       [romaji]
       tables = ["full-width", "hepburn", "kunrei", "input-aids", "z-symbols", "azik", "azik-custom.tsv", "half-width-digits.tsv"]
 
