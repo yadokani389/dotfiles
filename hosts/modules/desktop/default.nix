@@ -34,6 +34,10 @@
   };
 
   programs.dconf.enable = true;
+  programs.ydotool = {
+    enable = true;
+    group = "uinput";
+  };
 
   environment.gnome.excludePackages = with pkgs; [
     baobab # disk usage analyzer
