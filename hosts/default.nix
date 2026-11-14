@@ -17,6 +17,7 @@ let
         };
         overlays = [
           inputs.nur-yadokani.overlays.nur
+          inputs.niri-flake.overlays.niri
         ];
       };
       inherit modules;
@@ -34,6 +35,7 @@ let
 
         overlays = [
           inputs.nur-yadokani.overlays.nur
+          inputs.niri-flake.overlays.niri
         ];
       };
       inherit modules;

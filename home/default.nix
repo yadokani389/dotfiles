@@ -12,6 +12,7 @@ let
         config.allowUnfree = true;
         overlays = [
           inputs.nur-yadokani.overlays.nur
+          inputs.niri-flake.overlays.niri
         ];
       };
     in
@@ -57,6 +58,7 @@ in
     modules = [
       ./terminal/full.nix
       ./desktop
+      inputs.niri-flake.homeModules.config
     ];
   };
 }

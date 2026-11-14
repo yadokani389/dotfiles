@@ -45,17 +45,7 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri-flake = {
-      url = "github:sodiboo/niri-flake";
-      inputs = {
-        niri-stable.follows = "";
-        niri-unstable.follows = "";
-        nixpkgs-stable.follows = "";
-        nixpkgs.follows = "nixpkgs";
-        xwayland-satellite-stable.follows = "";
-        xwayland-satellite-unstable.follows = "";
-      };
-    };
+    niri-flake.url = "github:epireyn/niri-flake";
     nix-on-droid = {
       url = "github:yadokani389/nix-on-droid/pr503-cleanup";
       inputs.nixpkgs.follows = "nixpkgs";

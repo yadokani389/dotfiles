@@ -1,19 +1,16 @@
 {
-  inputs,
   pkgs,
   ...
 }:
 {
-  imports = [ inputs.niri-flake.homeModules.niri ];
-
   home.packages = with pkgs; [
     awww
-    xwayland-satellite
   ];
 
-  programs.niri.package = pkgs.niri;
+  programs.niri.package = pkgs.niri-unstable;
 
   programs.niri.settings = {
+    xwayland-satellite.enable = true;
     binds = import ./key-binds.nix;
     input = {
       focus-follows-mouse = {
