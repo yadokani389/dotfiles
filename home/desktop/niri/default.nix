@@ -5,6 +5,7 @@
 {
   home.packages = with pkgs; [
     awww
+    xwayland-satellite
   ];
 
   programs.niri.package = pkgs.niri-unstable;
