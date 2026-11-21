@@ -59,6 +59,10 @@
         xremap.follows = "";
       };
     };
+    # Use nightly until a stable release with the Lua VFS API reaches nixpkgs.
+    yazi-nightly = {
+      url = "github:sxyazi/yazi/main";
+    };
   };
 
   outputs =
