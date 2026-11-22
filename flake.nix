@@ -67,6 +67,10 @@
     yazi-nightly = {
       url = "github:sxyazi/yazi/main";
     };
+    yazi-plugins = {
+      url = "github:yazi-rs/plugins";
+      flake = false;
+    };
   };
 
   outputs =

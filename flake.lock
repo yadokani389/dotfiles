@@ -704,6 +704,7 @@
         "treefmt-nix": "treefmt-nix_2",
         "xremap-flake": "xremap-flake",
         "yazi-nightly": "yazi-nightly",
+        "yazi-plugins": "yazi-plugins",
         "zen-browser": "zen-browser"
       }
     },
@@ -898,6 +899,22 @@
         "owner": "sxyazi",
         "ref": "main",
         "repo": "yazi",
+        "type": "github"
+      }
+    },
+    "yazi-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794293599,
+        "narHash": "sha256-Nz6AvWAiwdmH2HJ2vA3rMfbDDHSkXG20Ml6vc5yrjRM=",
+        "owner": "yazi-rs",
+        "repo": "plugins",
+        "rev": "1ef5fe02a6122f8f3bb47a41056aab3f4b8598bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yazi-rs",
+        "repo": "plugins",
         "type": "github"
       }
     },
