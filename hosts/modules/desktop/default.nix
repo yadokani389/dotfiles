@@ -1,11 +1,22 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./fonts.nix
+    ./speech-cpp.nix
     inputs.niri-flake.nixosModules.niri
   ];
 
   security.pam.services.hyprlock = { };
+
+  users.groups.uinput.members = lib.attrNames (
+    lib.filterAttrs (_: user: user.systemd.user.services ? hyprwhspr) config.home-manager.users
+  );
 
   services = {
     blueman.enable = true;

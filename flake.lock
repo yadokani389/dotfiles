@@ -160,6 +160,26 @@
         "type": "github"
       }
     },
+    "hyprwhspr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795311399,
+        "narHash": "sha256-6oavPikTxAp5XB2UgafzYB587WygwC0CYA3TByYG32g=",
+        "owner": "goodroot",
+        "repo": "hyprwhspr",
+        "rev": "30a4aa17fc4be66846435aa58d61e1cacef9dbd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "goodroot",
+        "repo": "hyprwhspr",
+        "type": "github"
+      }
+    },
     "kanaemi": {
       "inputs": {
         "crane": "crane",
@@ -572,11 +592,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792239841,
-        "narHash": "sha256-R9zNeVp99bHVTbBtjnBZ3j0H6jq5BAlf+3udnNRvzDg=",
+        "lastModified": 1795331626,
+        "narHash": "sha256-l1ET/sucuMOznRNzkshW4NnQHqGpfQAeuid+eciZ1RM=",
         "owner": "yadokani389",
         "repo": "nur-packages",
-        "rev": "9a31f2cc7b61d6f948fc38ffbd336f815b9b6a08",
+        "rev": "f20692c5073c2cbd8bbabd99528ac3e48534cf04",
         "type": "github"
       },
       "original": {
@@ -672,6 +692,7 @@
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "hyprwhspr": "hyprwhspr",
         "kanaemi": "kanaemi",
         "kanaemi-dict": "kanaemi-dict",
         "niri-flake": "niri-flake",

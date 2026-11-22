@@ -3,6 +3,14 @@
 
   "Mod+Return".action.spawn = "kitty";
   "Mod+D".action.spawn = "fuzzel";
+  "Mod+A" = {
+    repeat = false;
+    action.spawn = [
+      "hyprwhspr"
+      "record"
+      "toggle"
+    ];
+  };
   "Mod+semicolon".action.spawn = [
     "kitty"
     "--class"

@@ -51,6 +51,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    hyprwhspr = {
+      url = "github:goodroot/hyprwhspr";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     xremap-flake = {
       url = "github:xremap/nix-flake";
       inputs = {

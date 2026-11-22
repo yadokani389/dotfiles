@@ -4,6 +4,7 @@
     ./clipse.nix
     ./dunst.nix
     ./fuzzel.nix
+    ./hyprwhspr.nix
     ./hyprlock.nix
     ./input-method.nix
     ./kitty.nix
